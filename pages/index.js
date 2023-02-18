@@ -8,7 +8,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
-  console.log("data::", data);
+  //console.log("data::", data);
   // const planets = data.map((planet, key={}) => planet.name);
 
   return (

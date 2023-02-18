@@ -1,0 +1,6 @@
+.main {
+  margin: 2rem auto;
+  width: 375px;
+  border: 1px solid red;
+  background-image: url("../../components/assets/background-stars.svg");
+}
