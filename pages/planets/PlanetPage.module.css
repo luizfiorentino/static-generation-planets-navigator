@@ -1,6 +1,27 @@
 .main {
-  margin: 2rem auto;
+  margin: auto;
   width: 375px;
+  height: 100vh;
   border: 1px solid red;
   background-image: url("../../components/assets/background-stars.svg");
+}
+
+.topBar {
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    width: 768px;
+    padding: 0px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main {
+    width: 1440px;
+    padding: 0px;
+  }
+
+  .topBar {
+  }
 }

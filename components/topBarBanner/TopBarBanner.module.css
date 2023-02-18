@@ -9,3 +9,9 @@
   text-transform: uppercase;
   color: #ffffff;
 }
+
+@media screen and (min-width: 1440px) {
+  .main {
+    min-width: 109px;
+  }
+}

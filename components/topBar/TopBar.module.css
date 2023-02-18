@@ -3,4 +3,55 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hamburgerIcon {
+  display: flex;
+}
+
+.planetsMenu {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    padding: 32px 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hamburgerIcon {
+    display: none;
+  }
+
+  .banner {
+    margin-bottom: 40px;
+  }
+
+  .planetsMenu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main {
+    flex-direction: row;
+
+    padding: 22px 41px 27px 32px;
+
+    /* padding: top  right bottom left */
+    /* border: 1px solid red; */
+  }
+
+  .planetsMenu {
+    justify-content: right;
+  }
+  .banner {
+    /* border: 1px solid green;
+    display: flex;
+    align-items: center; */
+    margin: 0;
+  }
 }

@@ -7,7 +7,12 @@ import styles from "./PlanetPage.module.css";
 export default function PlanetPage(props) {
   return (
     <div className={styles.main}>
-      <TopBar />
+      <div className={styles.topBar}>
+        <TopBar />
+      </div>
+      <div>
+        <h3>Content</h3>
+      </div>
     </div>
   );
 }
