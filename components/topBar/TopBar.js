@@ -2,9 +2,9 @@ import React from "react";
 import TopBarBanner from "../topBarBanner/TopBarBanner";
 import HamburgerIconTb from "../hamburgerIcon/HamburgerIcon";
 import styles from "./TopBar.module.css";
-import PlanetsMenuBar from "../planetsMenuBar/PlanetsMenuBar";
+import MenuBar from "../menuBar/MenuBar";
 
-export default function TopBar() {
+export default function TopBar(props) {
   return (
     <div className={styles.main}>
       <div className={styles.banner}>
@@ -15,7 +15,7 @@ export default function TopBar() {
         <HamburgerIconTb />
       </div>
       <div className={styles.planetsMenu}>
-        <PlanetsMenuBar />
+        <MenuBar items={props.items} />
       </div>
     </div>
   );

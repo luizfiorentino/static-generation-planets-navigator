@@ -5,10 +5,11 @@ import TopBar from "@/components/topBar/TopBar";
 import styles from "./PlanetPage.module.css";
 
 export default function PlanetPage(props) {
+  const planets = data.map((planet) => planet.name);
   return (
     <div className={styles.main}>
       <div className={styles.topBar}>
-        <TopBar />
+        <TopBar items={planets} />
       </div>
       <div>
         <h3>Content</h3>
