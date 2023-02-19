@@ -1,12 +1,55 @@
 .main {
   margin: auto;
+  /* display: flex;
+  flex-direction: column; */
   width: 375px;
   height: 100vh;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-image: url("../../components/assets/background-stars.svg");
+  /* padding-bottom: 47px; */
 }
 
+/* .innerContainer {
+  margin-bottom: 39px;
+} */
+
 .topBar {
+}
+
+.mobileMenuBar {
+  margin-bottom: 95px;
+}
+
+.planetImg {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 98px;
+}
+
+.bannerAndDescription {
+  /* display: flex;
+  flex-direction: column; */
+  padding: 0 24px 40px 24px;
+}
+
+.planetBanner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 11px;
+}
+
+.description {
+  margin-bottom: 37px;
+}
+
+.link {
+  margin-bottom: 28px;
+}
+
+.infoTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 @media screen and (min-width: 768px) {

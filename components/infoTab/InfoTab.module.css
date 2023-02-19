@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
+  padding: 9px 24px;
+}
+
+.infoKey {
+  font-family: "League Spartan", sans-serif;
+  font-size: 8px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.73;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.infoValue {
+  font-family: "Antonio", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.75px;
+  text-transform: uppercase;
+  color: #ffffff;
+}

@@ -13,6 +13,21 @@
   justify-content: space-between; */
 }
 
+.mobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 24px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .main {
     max-width: 665px;

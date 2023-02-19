@@ -8,9 +8,8 @@ export default function TopBar(props) {
   return (
     <div className={styles.main}>
       <div className={styles.banner}>
-        <TopBarBanner>The Planets</TopBarBanner>
+        <TopBarBanner className="primary">The Planets</TopBarBanner>
       </div>
-
       <div className={styles.hamburgerIcon}>
         <HamburgerIconTb />
       </div>
