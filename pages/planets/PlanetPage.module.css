@@ -32,6 +32,12 @@
   padding: 0 24px 40px 24px;
 }
 
+.middleSection {
+  /* background-color: red; */
+  display: flex;
+  /* flex-direction: column; */
+}
+
 .planetBanner {
   display: flex;
   justify-content: center;
@@ -46,10 +52,15 @@
   margin-bottom: 28px;
 }
 
+.pageTabs {
+  display: none;
+}
+
 .infoTabs {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-bottom: 47px;
 }
 
 @media screen and (min-width: 768px) {
@@ -57,6 +68,71 @@
     width: 768px;
     padding: 0px;
   }
+
+  .desktop {
+    display: inline;
+  }
+
+  .middleSection {
+    min-width: 340px;
+    margin-right: 69px;
+  }
+
+  .bannerAndContent {
+    padding: 0;
+  }
+
+  .bannerAndDescription {
+    /* display: flex;
+    flex-direction: column; */
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .planetImg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 130px;
+  }
+
+  .middleSection {
+    margin-bottom: 27px;
+  }
+  .pageTabs {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+  .bannerAndContent {
+    display: flex;
+    flex-direction: column;
+    max-width: 340px;
+    margin-right: 70px;
+  }
+
+  .planetBanner {
+    display: flex;
+    justify-content: left;
+  }
+
+  .pageTabs {
+    margin-bottom: 3rem;
+  }
+
+  .infoTabs {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 36px;
+  }
+
+  /* .descriptionAndLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  } */
 }
 
 @media screen and (min-width: 1440px) {
@@ -66,5 +142,23 @@
   }
 
   .topBar {
+  }
+
+  .planetImg {
+  }
+  .desktop {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .bannerAndDescription {
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infoTabs {
+    gap: 30px;
   }
 }

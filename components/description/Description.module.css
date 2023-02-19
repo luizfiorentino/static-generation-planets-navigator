@@ -6,3 +6,23 @@
   line-height: 22px;
   font-weight: 400;
 }
+
+@media screen and (min-width: 768px) {
+  .main {
+    display: flex;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main {
+    width: 350px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "League Spartan", sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+    text-align: left;
+  }
+}

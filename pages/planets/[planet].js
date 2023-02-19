@@ -10,6 +10,7 @@ import TopBarBanner from "@/components/topBarBanner/TopBarBanner";
 import Description from "@/components/description/Description";
 import SourceLink from "@/components/sourceLink/SourceLink";
 import InfoTab from "@/components/infoTab/InfoTab";
+import PageMenuTab from "@/components/pageMenuTab/PageMenuTab";
 
 export default function PlanetPage(props) {
   const planets = data.map((planet) => planet.name);
@@ -35,29 +36,41 @@ export default function PlanetPage(props) {
         <div className={styles.mobileMenuBar}>
           <MenuBar items={menuItems} variant="mobile" />
         </div>
-        <div className={styles.planetImg}>
-          <PlanetImage image={PlanetMercury.src} />
+        <div className={styles.desktop}>
+          <div className={styles.planetImg}>
+            <PlanetImage image={PlanetMercury.src} />
+          </div>{" "}
+          <div className={styles.bannerAndDescription}>
+            {" "}
+            <div className={styles.middleSection}>
+              {" "}
+              <div className={styles.bannerAndContent}>
+                <div className={styles.planetBanner}>
+                  <TopBarBanner className="planetBanner">{planet}</TopBarBanner>
+                </div>
+                <div className={styles.descriptionAndLink}>
+                  <div className={styles.description}>
+                    <Description text={text} />
+                  </div>
+                  <div className={styles.link}>
+                    <SourceLink />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.pageTabs}>
+              <PageMenuTab />
+            </div>
+          </div>
         </div>
-        <div className={styles.bannerAndDescription}>
-          <div className={styles.planetBanner}>
-            <TopBarBanner className="planetBanner">{planet}</TopBarBanner>
-          </div>
-          <div className={styles.description}>
-            <Description text={text} />
-          </div>
-          <div className={styles.link}>
-            <SourceLink />
-          </div>
-
-          <div className={styles.infoTabs}>
-            {planetInfo.map((planet) => (
-              <InfoTab
-                key={planet.call}
-                call={planet.call}
-                value={planet.value}
-              />
-            ))}
-          </div>
+        <div className={styles.infoTabs}>
+          {planetInfo.map((planet) => (
+            <InfoTab
+              key={planet.call}
+              call={planet.call}
+              value={planet.value}
+            />
+          ))}
         </div>
       </div>
     </div>

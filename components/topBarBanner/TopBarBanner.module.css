@@ -15,7 +15,6 @@
   font-weight: 400;
   font-size: 40px;
   line-height: 52px;
-
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -23,5 +22,14 @@
 @media screen and (min-width: 1440px) {
   .main {
     min-width: 109px;
+  }
+
+  .planetBanner {
+    font-family: "Antonio", sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 104px;
+    text-transform: uppercase;
+    color: #ffffff;
   }
 }
