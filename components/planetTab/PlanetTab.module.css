@@ -32,6 +32,9 @@
   margin-right: 25px;
 }
 
+.planetName {
+  background-color: hotpink;
+}
 .mercury {
   background-color: #def4fc;
 }

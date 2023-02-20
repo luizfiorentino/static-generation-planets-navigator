@@ -34,7 +34,7 @@ export default function Home(props) {
 
         <nav className={styles.menu}>
           {objects.map((planet) => (
-            <PlanetTab key={planet} planet={planet.name} color={planet.color}>
+            <PlanetTab key={planet} planet={planet.name}>
               {" "}
             </PlanetTab>
           ))}
