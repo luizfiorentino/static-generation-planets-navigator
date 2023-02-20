@@ -28,6 +28,38 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: pink;
+  /* background-color: royalblue; */
   margin-right: 25px;
+}
+
+.mercury {
+  background-color: #def4fc;
+}
+
+.venus {
+  background-color: #f7cc7f;
+}
+
+.earth {
+  background-color: #545bfe;
+}
+
+.mars {
+  background-color: #ff6a45;
+}
+
+.jupiter {
+  background-color: #ecad7a;
+}
+
+.saturn {
+  background-color: #fccb6b;
+}
+
+.uranus {
+  background-color: #65f0d5;
+}
+
+.neptune {
+  background-color: #497efa;
 }

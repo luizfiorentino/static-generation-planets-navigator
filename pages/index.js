@@ -14,6 +14,11 @@ export default function Home(props) {
   // const planets = data.map((planet, key={}) => planet.name);
   console.log("index.js - props:", props);
 
+  const objects = data.map((planet) => {
+    return { name: planet.name, color: planet.color };
+  });
+  console.log("const obj::", objects);
+
   return (
     <>
       <Head>
@@ -28,8 +33,10 @@ export default function Home(props) {
         </div>
 
         <nav className={styles.menu}>
-          {props.planets.map((planet) => (
-            <PlanetTab planet={planet}> </PlanetTab>
+          {objects.map((planet) => (
+            <PlanetTab key={planet} planet={planet.name} color={planet.color}>
+              {" "}
+            </PlanetTab>
           ))}
         </nav>
       </main>
@@ -38,7 +45,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(context) {
-  const planets = data.map((planet) => planet.name);
+  const planets = data.map((planet) => planet.name + planet.color);
   return {
     props: {
       planets: planets,
