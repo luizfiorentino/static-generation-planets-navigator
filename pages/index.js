@@ -4,12 +4,15 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import data from "./data.json";
 import Link from "next/link";
+import TopBar from "@/components/topBar/TopBar";
+import PlanetTab from "@/components/planetTab/PlanetTab";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
   //console.log("data::", data);
   // const planets = data.map((planet, key={}) => planet.name);
+  console.log("index.js - props:", props);
 
   return (
     <>
@@ -20,12 +23,13 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1>Hello Planets!</h1>
-        <nav>
+        <div className={styles.head}>
+          <TopBar />
+        </div>
+
+        <nav className={styles.menu}>
           {props.planets.map((planet) => (
-            <Link key={planet} href={`/planets/${planet}`}>
-              <button>{planet}</button>
-            </Link>
+            <PlanetTab planet={planet}> </PlanetTab>
           ))}
         </nav>
       </main>

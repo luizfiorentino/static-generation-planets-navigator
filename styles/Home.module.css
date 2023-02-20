@@ -2,6 +2,7 @@
 
 .main {
   margin: 2rem auto;
+
   padding: 0;
   box-sizing: border-box;
   border: 1px solid red;
@@ -12,6 +13,16 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh; */
+}
+
+.head {
+  margin-bottom: 24px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px 47px 24px;
 }
 
 .description {

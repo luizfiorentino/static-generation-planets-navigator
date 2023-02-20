@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.button {
+  padding: 20px 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.iconAndName {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: pink;
+  margin-right: 25px;
+}
