@@ -37,8 +37,8 @@ export default function PlanetPage(props) {
         {/* <div className={styles.planetImg}> */}
         <PlanetImage image={PlanetMercury.src} />
         {/* </div>{" "} */}
-        {/* <div className={styles.bannerAndDescription}> */}{" "}
-        {/* <div className={styles.middleSection}> */}{" "}
+        {/* <div className={styles.bannerAndDescription}> */}
+        {/* <div className={styles.middleSection}> */}
         <div className={styles.bannerAndContent}>
           <div className={styles.planetBanner}>
             <TopBarBanner className="planetBanner">{planet}</TopBarBanner>
