@@ -28,13 +28,11 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.head}>
-          <TopBar />
-        </div>
+        <TopBar />
 
         <nav className={styles.menu}>
           {objects.map((planet) => (
-            <PlanetTab key={planet} planet={planet.name}>
+            <PlanetTab key={planet.name} planet={planet.name}>
               {" "}
             </PlanetTab>
           ))}
