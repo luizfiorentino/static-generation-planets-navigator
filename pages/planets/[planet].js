@@ -29,49 +29,41 @@ export default function PlanetPage(props) {
   console.log("planetPage, props::", props, "text", text);
   return (
     <div className={styles.main}>
-      <div className={styles.innerContainer}>
-        <div className={styles.topBar}>
-          <TopBar items={planets} />
-        </div>
-        <div className={styles.mobileMenuBar}>
-          <MenuBar items={menuItems} variant="mobile" />
-        </div>
-        <div className={styles.desktop}>
-          <div className={styles.planetImg}>
-            <PlanetImage image={PlanetMercury.src} />
-          </div>{" "}
-          <div className={styles.bannerAndDescription}>
+      <TopBar items={planets} />
+
+      <MenuBar items={menuItems} variant="mobile" />
+
+      <div className={styles.desktop}>
+        <div className={styles.planetImg}>
+          <PlanetImage image={PlanetMercury.src} />
+        </div>{" "}
+        <div className={styles.bannerAndDescription}>
+          {" "}
+          <div className={styles.middleSection}>
             {" "}
-            <div className={styles.middleSection}>
-              {" "}
-              <div className={styles.bannerAndContent}>
-                <div className={styles.planetBanner}>
-                  <TopBarBanner className="planetBanner">{planet}</TopBarBanner>
+            <div className={styles.bannerAndContent}>
+              <div className={styles.planetBanner}>
+                <TopBarBanner className="planetBanner">{planet}</TopBarBanner>
+              </div>
+              <div className={styles.descriptionAndLink}>
+                <div className={styles.description}>
+                  <Description text={text} />
                 </div>
-                <div className={styles.descriptionAndLink}>
-                  <div className={styles.description}>
-                    <Description text={text} />
-                  </div>
-                  <div className={styles.link}>
-                    <SourceLink />
-                  </div>
+                <div className={styles.link}>
+                  <SourceLink />
                 </div>
               </div>
             </div>
-            <div className={styles.pageTabs}>
-              <PageMenuTab />
-            </div>
+          </div>
+          <div className={styles.pageTabs}>
+            <PageMenuTab />
           </div>
         </div>
-        <div className={styles.infoTabs}>
-          {planetInfo.map((planet) => (
-            <InfoTab
-              key={planet.call}
-              call={planet.call}
-              value={planet.value}
-            />
-          ))}
-        </div>
+      </div>
+      <div className={styles.infoTabs}>
+        {planetInfo.map((planet) => (
+          <InfoTab key={planet.call} call={planet.call} value={planet.value} />
+        ))}
       </div>
     </div>
   );
