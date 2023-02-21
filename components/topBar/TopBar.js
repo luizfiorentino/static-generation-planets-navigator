@@ -6,7 +6,7 @@ import MenuBar from "../menuBar/MenuBar";
 
 export default function TopBar(props) {
   return (
-    <div className={styles.main}>
+    <div className={`${styles.main} ${styles[props.variant]}`}>
       <div className={styles.banner}>
         <TopBarBanner className="primary">The Planets</TopBarBanner>
       </div>

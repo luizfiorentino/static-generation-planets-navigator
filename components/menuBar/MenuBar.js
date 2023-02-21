@@ -11,7 +11,9 @@ export default function MenuBar({ variant = "main", ...props }) {
       className={variant === "main" ? styles.main : styles.mobile}
     >
       {props?.items?.map((item) => (
-        <ItemSelector key={item}>{item}</ItemSelector>
+        <ItemSelector key={item} variant="pageMenu">
+          {item}
+        </ItemSelector>
       ))}
     </div>
   );

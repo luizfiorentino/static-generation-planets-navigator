@@ -29,10 +29,8 @@ export default function PlanetPage(props) {
   console.log("planetPage, props::", props, "text", text);
   return (
     <div className={styles.main}>
-      <TopBar items={planets} />
-
+      <TopBar items={planets} variant="planet" />
       <MenuBar items={menuItems} variant="mobile" />
-
       <div className={styles.desktop}>
         {/* <div className={styles.planetImg}> */}
         <PlanetImage image={PlanetMercury.src} />

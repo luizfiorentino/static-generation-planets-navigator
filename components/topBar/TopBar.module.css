@@ -7,6 +7,10 @@
   margin-bottom: 24px;
 }
 
+.planet {
+  margin-bottom: 0;
+}
+
 .hamburgerIcon {
   display: flex;
 }
