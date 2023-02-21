@@ -23,6 +23,10 @@
   margin-bottom: 98px;
 }
 
+.desktop {
+  padding: 0 24px 40px 24px;
+}
+
 .bannerAndDescription {
   /* display: flex;
   flex-direction: column; */
