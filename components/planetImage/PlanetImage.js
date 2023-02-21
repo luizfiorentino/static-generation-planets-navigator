@@ -3,10 +3,12 @@ import styles from "./PlanetImage.module.css";
 
 export default function PlanetImage(props) {
   return (
-    <img
-      className={styles.main}
-      src={props.image}
-      alt="the image of a planet"
-    />
+    <div className={styles.main}>
+      <img
+        src={props.image}
+        className={styles.inner}
+        alt="the image of a planet"
+      />
+    </div>
   );
 }
