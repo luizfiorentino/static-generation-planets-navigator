@@ -40,9 +40,9 @@ export default function PlanetPage(props) {
         {/* <div className={styles.bannerAndDescription}> */}
         {/* <div className={styles.middleSection}> */}
         <div className={styles.bannerAndContent}>
-          <div className={styles.planetBanner}>
-            <TopBarBanner className="planetBanner">{planet}</TopBarBanner>
-          </div>
+          {/* <div className={styles.planetBanner}> */}
+          <TopBarBanner className="planetBanner">{planet}</TopBarBanner>
+          {/* </div> */}
           <div className={styles.descriptionAndLink}>
             <div className={styles.description}>
               <Description text={text} />
