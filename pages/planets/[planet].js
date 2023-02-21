@@ -43,14 +43,14 @@ export default function PlanetPage(props) {
           {/* <div className={styles.planetBanner}> */}
           <TopBarBanner className="planetBanner">{planet}</TopBarBanner>
           {/* </div> */}
-          <div className={styles.descriptionAndLink}>
-            <div className={styles.description}>
-              <Description text={text} />
-            </div>
-            <div className={styles.link}>
-              <SourceLink />
-            </div>
+          {/* <div className={styles.descriptionAndLink}> */}
+          <div className={styles.description}>
+            <Description text={text} />
           </div>
+          <div className={styles.link}>
+            <SourceLink />
+          </div>
+          {/* </div> */}
         </div>
         {/* </div> */}
         <div className={styles.pageTabs}>
