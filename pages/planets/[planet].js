@@ -34,9 +34,9 @@ export default function PlanetPage(props) {
       <MenuBar items={menuItems} variant="mobile" />
 
       <div className={styles.desktop}>
-        <div className={styles.planetImg}>
-          <PlanetImage image={PlanetMercury.src} />
-        </div>{" "}
+        {/* <div className={styles.planetImg}> */}
+        <PlanetImage image={PlanetMercury.src} />
+        {/* </div>{" "} */}
         <div className={styles.bannerAndDescription}>
           {" "}
           <div className={styles.middleSection}>
