@@ -6,13 +6,18 @@ import data from "./data.json";
 
 import TopBar from "@/components/topBar/TopBar";
 import PlanetTab from "@/components/planetTab/PlanetTab";
+import getPlanetNames from "@/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home(props) {
+export default function Home({ planets }) {
   //console.log("data::", data);
   // const planets = data.map((planet, key={}) => planet.name);
-  console.log("index.js - props:", props);
+  // console.log("index.js - props:", props);
+  console.log(
+    "planets:",
+    planets.map((planet) => planet.fields.planetField)
+  );
 
   const objects = data.map((planet) => {
     return { name: planet.name, color: planet.color };
@@ -31,8 +36,8 @@ export default function Home(props) {
         <TopBar />
 
         <nav className={styles.menu}>
-          {objects.map((planet) => (
-            <PlanetTab key={planet.name} planet={planet.name}>
+          {planets.map((planet) => (
+            <PlanetTab key={planet} planet={planet.fields.planetField}>
               {" "}
             </PlanetTab>
           ))}
@@ -42,11 +47,17 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps(context) {
-  const planets = data.map((planet) => planet.name + planet.color);
-  return {
-    props: {
-      planets: planets,
-    },
-  };
-}
+// export async function getStaticProps(context) {
+//   const planets = data.map((planet) => planet.name + planet.color);
+//   return {
+//     props: {
+//       planets: planets,
+//     },
+//   };
+// }
+
+Home.getInitialProps = async () => {
+  const planets = await getPlanetNames();
+
+  return { planets };
+};
