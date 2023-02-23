@@ -5,14 +5,25 @@ const client = createClient({
   accessToken: "Ta_O5j4YDaSFLl3EpV4xK0kzLWT9f1tgM0IOeeHpGgQ",
 });
 
-// Retrieve the list of blog posts from Contentful
-const getPlanetNames = async () => {
+// // Retrieve the list of blog posts from Contentful
+// const getPlanetNames = async () => {
+//   const response = await client.getEntries({
+//     // content_type: "blogPost",
+//     content_type: "planetName",
+//   });
+
+//   return response.items;
+// };
+
+// export default getPlanetNames;
+
+const getPlanetContent = async () => {
   const response = await client.getEntries({
     // content_type: "blogPost",
-    content_type: "planetName",
+    content_type: "planetContent",
   });
 
   return response.items;
 };
 
-export default getPlanetNames;
+export default getPlanetContent;

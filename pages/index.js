@@ -1,28 +1,28 @@
 import Head from "next/head";
-
+import { createClient } from "contentful";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import data from "./data.json";
+//import data from "./data.json";
 
 import TopBar from "@/components/topBar/TopBar";
 import PlanetTab from "@/components/planetTab/PlanetTab";
-import getPlanetNames from "@/utils";
+import getPlanetContent from "@/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ planets }) {
+export default function Home() {
   //console.log("data::", data);
   // const planets = data.map((planet, key={}) => planet.name);
   // console.log("index.js - props:", props);
-  console.log(
-    "planets:",
-    planets.map((planet) => planet.fields.planetField)
-  );
+  // console.log(
+  //   "planets:",
+  //   planets.map((planet) => planet.fields.planetField)
+  // );
 
-  const objects = data.map((planet) => {
-    return { name: planet.name, color: planet.color };
-  });
-  console.log("const obj::", objects);
+  // const objects = data.map((planet) => {
+  //   return { name: planet.name, color: planet.color };
+  // });
+  //console.log("planets::", planets);
 
   return (
     <>
@@ -37,15 +37,34 @@ export default function Home({ planets }) {
 
         <nav className={styles.menu}>
           {planets.map((planet) => (
-            <PlanetTab key={planet} planet={planet.fields.planetField}>
+            <PlanetTab key={planet} planet={planet}>
               {" "}
             </PlanetTab>
           ))}
         </nav>
+        {/* <div>
+          {planets.map((planet) => (
+            <img key={planet} src={planet?.fields?.image?.fields?.file.url} />
+          ))}
+        </div> */}
       </main>
     </>
   );
 }
+
+export async function getStaticProps(context) {
+  await getPlanetContent();
+  const planets = response.items;
+  // const info = planets.map;
+  // console.log("top index planets", planets);
+
+  return {
+    props: {
+      planets: 1,
+    },
+  };
+}
+// }
 
 // export async function getStaticProps(context) {
 //   const planets = data.map((planet) => planet.name + planet.color);
@@ -55,9 +74,3 @@ export default function Home({ planets }) {
 //     },
 //   };
 // }
-
-Home.getInitialProps = async () => {
-  const planets = await getPlanetNames();
-
-  return { planets };
-};
