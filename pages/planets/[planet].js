@@ -13,44 +13,26 @@ import InfoTab from "@/components/infoTab/InfoTab";
 import PageMenuTab from "@/components/pageMenuTab/PageMenuTab";
 import getPlanetContent from "@/utils";
 
-const content = async () => {
-  await getPlanetContent().then((data) => data);
-  return data;
-};
+// const response = await getPlanetContent();
+// return response.find((object) => object.fields.name === planet);
 
-//const planets = data.map((planet) => planet);
-// console.log("top index.js plnets", planets);
-// console.log("planetPage planets", planets);
-
-// const planetNames = data.map((planet) => planet.name);
-// console.log("pla page plnames", planetNames);
-
-export function getPlanetInfo(planet) {
-  return data.find((obj) => obj.name === planet);
-}
+// export async function getPlanetInfo(planet) {
+//   const items = await getPlanetContent();
+//   return items.find((obj) => obj.name === planet);
+// }
 
 export default function PlanetPage(props) {
-  //const planets = data.map((planet) => planet.name);
   const menuItems = ["Overview", "Structure", "Surface"];
-  console.log("top pln page props", props);
-  // console.log("data::", data);
-  // console.log("planet page: props", planets);
-  // const planet = props.planet;
-  // const text = props.planetInfo.overview.content;
-  // const planetInfo = [
-  //   { call: "Rotation Time", value: props.planetInfo.rotation },
-  //   { call: "Revolution time", value: props.planetInfo.revolution },
-  //   { call: "Radius", value: props.planetInfo.radius },
-  //   { call: "Average Temp.", value: props.planetInfo.temperature },
-  // ];
+  console.log("planetPage props", props);
 
-  // console.log("infoo", planetInfo);
-  // console.log("planetPage, props::", props, "text", text);
   return (
+    // <p>test</p>
+
     <div className={styles.main}>
+      {" "}
       <TopBar items={"planets"} variant="planet" />
       <MenuBar items={menuItems} variant="mobile" />
-      <img src={props.planetInfo.images}
+      {/* <h1>{props.planetInfo.name}</h1> */}
       <div className={styles.desktop}>
         {/* <div className={styles.planetImg}> */}
         <PlanetImage image={PlanetMercury.src} />
@@ -84,28 +66,46 @@ export default function PlanetPage(props) {
     </div>
   );
 }
+//consider export function (no async)
+export async function getPlanetInfo(planet) {
+  const items = await getPlanetContent();
+  return items.find((object) => object.fields.name === planet);
 
+  console.log("planet page getPlanetContent items", items);
+}
 export async function getStaticPaths() {
-  // const planets = data.map((planet) => planet.name);
-
-  // planets.map((planet) => {
-  //   return planet.name;
-  // });
-  // console.log("planets::", planets);
-  const planetNames = data.map((planet) => planet.name);
+  const items = await getPlanetContent();
+  const planetNames = items.map((planet) => {
+    return planet.fields.name;
+  });
+  console.log("getStaticPaths - planetNames:", planetNames);
 
   return {
     paths: planetNames.map((planet) => {
       return { params: { planet: planet.toString() } };
     }),
+
     fallback: false,
   };
 }
+// export async function getStaticPaths() {
+//   const planets = data.map((planet) => {
+//     return planet.name;
+//   });
+//   //console.log("planets::", planets);
+//   return {
+//     paths: planets.map((planet) => {
+//       return { params: { planet: planet.toString() } };
+//     }),
+//     fallback: false,
+//   };
+// }
 
 export async function getStaticProps(context) {
-  const planetInfo = getPlanetInfo(context.params.planet);
-  console.log("planetInfo::", planetInfo, "planet::", context.params.planet);
-
+  const planetInfo = await getPlanetInfo(context.params.planet);
+  // const planetInfo = getPlanetInfo(context.params.planet);
+  //console.log("planetInfo::", planetInfo, "planet::", context.params.planet);
+  console.log("planetInfo", planetInfo);
   return {
     props: {
       planetInfo: planetInfo,
@@ -113,6 +113,11 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+// export async function getPlanetInfo(planet) {
+//   const items = await getPlanetContent();
+//   return items.find((obj) => obj.name === planet);
+// }
 
 // PlanetPage.getInitialProps = async () => {
 //   const planets = await getPlanetContent();

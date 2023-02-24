@@ -23,6 +23,7 @@ const getPlanetContent = async () => {
     content_type: "planetContent",
   });
 
+  console.log("utils.js response", response);
   return response.items;
 };
 

@@ -10,7 +10,8 @@ import getPlanetContent from "@/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home(props) {
+  console.log("index.js props", props);
   //console.log("data::", data);
   // const planets = data.map((planet, key={}) => planet.name);
   // console.log("index.js - props:", props);
@@ -36,8 +37,8 @@ export default function Home() {
         <TopBar />
 
         <nav className={styles.menu}>
-          {planets.map((planet) => (
-            <PlanetTab key={planet} planet={planet}>
+          {props.planets.map((planet) => (
+            <PlanetTab key={planet.name} planet={planet.name}>
               {" "}
             </PlanetTab>
           ))}
@@ -53,14 +54,16 @@ export default function Home() {
 }
 
 export async function getStaticProps(context) {
-  await getPlanetContent();
-  const planets = response.items;
+  const items = await getPlanetContent();
+  console.log("indexjs items", items);
+  //const planets = response.items;
   // const info = planets.map;
   // console.log("top index planets", planets);
+  const planets = items.map((item) => item.fields);
 
   return {
     props: {
-      planets: 1,
+      planets: planets,
     },
   };
 }

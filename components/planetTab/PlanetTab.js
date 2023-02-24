@@ -5,7 +5,7 @@ import ChevronIcon from "../assets/icon-chevron.svg";
 
 export default function PlanetTab(props) {
   const planetName = props?.planet?.toLowerCase();
-  console.log("From planetTab props", props);
+  //console.log("From planetTab props", props.planet);
 
   return (
     <div className={styles.main}>
