@@ -17,23 +17,54 @@ export default function MenuBar({ variant = "main", ...items }) {
 
   console.log("variant: items:", items);
   return (
-    <div
-      {...items}
-      className={variant === "main" ? styles.main : styles.mobile}
-    >
-      {variant === "mobile"
-        ? items.items.map((item) => (
-            <ItemSelector
-              key={item}
-              item={items.items.indexOf(item)}
-              variant="pageMenu"
-              setItem={setItem}
-              itemSelected={itemSelected}
-            >
-              {item}
-            </ItemSelector>
-          ))
-        : undefined}
+    <div>
+      <div
+        {...items}
+        className={variant === "main" ? styles.main : styles.mobile}
+      >
+        <div className={styles.mobileInner}>
+          {variant === "mobile"
+            ? items.items.map((item) => (
+                <ItemSelector
+                  key={item}
+                  item={items.items.indexOf(item)}
+                  variant="pageMenu"
+                  setItem={setItem}
+                  itemSelected={itemSelected}
+                >
+                  {item}
+                </ItemSelector>
+              ))
+            : undefined}
+        </div>{" "}
+      </div>
+      <div className={styles.mobileFooter}>
+        <div
+          className={
+            itemSelected === 0
+              ? styles.mobileBottomActive
+              : styles.mobileBottomInactive
+          }
+        >
+          {/* <div></div> */}
+        </div>
+        <div
+          className={
+            itemSelected === 1
+              ? styles.mobileBottomActive
+              : styles.mobileBottomInactive
+          }
+        >
+          {/* <div></div> */}
+        </div>
+        <div
+          className={
+            itemSelected === 2
+              ? styles.mobileBottomActive
+              : styles.mobileBottomInactive
+          }
+        ></div>
+      </div>
     </div>
   );
 }

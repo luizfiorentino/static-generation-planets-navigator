@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./ItemSelector.module.css";
-import { useState } from "react";
 
 export default function ItemSelector(props) {
   console.log("item selector props=", props);
