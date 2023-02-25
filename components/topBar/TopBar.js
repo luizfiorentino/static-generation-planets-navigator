@@ -5,12 +5,20 @@ import styles from "./TopBar.module.css";
 import MenuBar from "../menuBar/MenuBar";
 
 export default function TopBar(props) {
+  const variant = props.variant;
+  console.log("topbar variant", variant);
   return (
     <div className={`${styles.main} ${styles[props.variant]}`}>
       <div className={styles.banner}>
         <TopBarBanner className="primary">The Planets</TopBarBanner>
       </div>
-      <div className={styles.hamburgerIcon}>
+      <div
+        className={
+          props.variant === "menu"
+            ? styles.hamburgerIconMenu
+            : styles.hamburgerIcon
+        }
+      >
         <HamburgerIconTb />
       </div>
       <div className={styles.planetsMenu}>

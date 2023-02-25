@@ -3,18 +3,20 @@ import styles from "./MenuBar.module.css";
 import ItemSelector from "../itemSelector/ItemSelector";
 import data from "../../pages/data.json";
 
-export default function MenuBar({ variant = "main", ...props }) {
-  console.log("variant:", variant);
+export default function MenuBar({ variant = "main", ...items }) {
+  console.log("variant: items:", items);
   return (
     <div
-      {...props}
+      {...items}
       className={variant === "main" ? styles.main : styles.mobile}
     >
-      {/* {props?.items?.map((item) => (
-        <ItemSelector key={item} variant="pageMenu">
-          {item}
-        </ItemSelector>
-      ))} */}
+      {variant === "mobile"
+        ? items.items.map((item) => (
+            <ItemSelector key={item} variant="pageMenu">
+              {item}
+            </ItemSelector>
+          ))
+        : undefined}
     </div>
   );
 }
