@@ -1,7 +1,7 @@
 import React from "react";
 //import data from "../data.json";
+import { useState } from "react";
 
-import TopBar from "@/components/topBar/TopBar";
 import styles from "./PlanetPage.module.css";
 import MenuBar from "@/components/menuBar/MenuBar";
 import PlanetImage from "@/components/planetImage/PlanetImage";
@@ -15,9 +15,14 @@ import getPlanetContent from "@/utils";
 import TopBar2 from "@/components/topBar2/TopBar2";
 
 export default function PlanetPage(props) {
+  const [activeTab, setActiveTab] = useState("Overview");
+
   const menuItems = ["Overview", "Structure", "Surface"];
   //console.log("planetPage props", props);
+
   const pages = ["Overview", "Structure", "Surface"];
+  const dados = props.planetInfo.fields.revolution;
+  console.log("revolution", dados);
 
   const key = Object.keys(props.planetInfo.fields);
   const rotation = key[3];
@@ -35,6 +40,12 @@ export default function PlanetPage(props) {
     "Neptune",
   ];
 
+  const setPage = (page) => {
+    console.log("SET PAGE:::::", page);
+    setActiveTab(page);
+    return page;
+  };
+  console.log("page::::::::", activeTab);
   return (
     <div className={styles.main}>
       <TopBar2 pages={pages} />
@@ -72,7 +83,7 @@ export default function PlanetPage(props) {
               </div>
             </div>
             <div className={styles.pageTabs}>
-              <PageMenuTab />
+              <PageMenuTab index={activeTab} setPage={setPage} />
             </div>
           </div>
           <div className={styles.infoTabs}>
@@ -80,10 +91,7 @@ export default function PlanetPage(props) {
               call={`${rotation} time`}
               value={props.planetInfo.fields.rotation}
             />
-            <InfoTab
-              call={`${revolution} time`}
-              value={props.planetInfo.fields.revolution}
-            />
+            <InfoTab call={`${revolution} time`} />
             <InfoTab call={radius} value={props.planetInfo.fields.radius} />
             <InfoTab
               call={"average temp."}

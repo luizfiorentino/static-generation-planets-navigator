@@ -32,6 +32,10 @@
     width: 350px;
     padding: 0;
   }
+
+  .active {
+    background-color: #419ebb;
+  }
 }
 
 @media screen and (min-width: 1440px) {
