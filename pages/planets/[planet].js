@@ -91,7 +91,10 @@ export default function PlanetPage(props) {
               call={`${rotation} time`}
               value={props.planetInfo.fields.rotation}
             />
-            <InfoTab call={`${revolution} time`} />
+            <InfoTab
+              call={`${revolution} time`}
+              value={props.planetInfo.fields.revolution}
+            />
             <InfoTab call={radius} value={props.planetInfo.fields.radius} />
             <InfoTab
               call={"average temp."}
