@@ -3,6 +3,7 @@
   padding-right: 40px;
   display: flex;
   flex-direction: column;
+
   gap: 16px;
 }
 
@@ -24,6 +25,13 @@
 .number {
   color: rgba(255, 255, 255, 0.5);
   margin-right: 8px;
+}
+
+@media screen and (min-width: 786px) {
+  .main {
+    width: 350px;
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 1440px) {

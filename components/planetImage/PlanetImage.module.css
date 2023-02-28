@@ -2,30 +2,33 @@
   display: flex;
 
   justify-content: center;
-  margin-bottom: 98px;
+  /* max-height: 38.5%;
+  padding: 0;
+  margin: 0;
+  align-items: center; */
+  /* padding: 0;
+  margin: 0; */
+  /* align-items: center; */
+  /* margin-bottom: 98px; */
 }
 
 .inner {
-  width: 111px;
+  width: 38.5%;
+  /* height: 38.5%; -> generates correct size, but too much vertical space */
+}
+
+.imageInner {
 }
 
 @media screen and (min-width: 768px) {
   .main {
-    width: 184px;
+    width: 63%;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .main {
-    width: 184px;
-    margin-left: 335px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .main {
-    width: 290px;
-    margin-left: 135px;
-    margin-right: 300px;
+    width: 100%;
+    margin: 0;
   }
 }

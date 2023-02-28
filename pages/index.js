@@ -2,6 +2,7 @@ import Head from "next/head";
 import { createClient } from "contentful";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
+import TopBar2 from "@/components/topBar2/TopBar2";
 //import data from "./data.json";
 
 import TopBar from "@/components/topBar/TopBar";
@@ -34,7 +35,8 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <TopBar variant="menu" />
+        {/* <TopBar variant="menu" /> */}
+        <TopBar2 variant="menu" />
 
         <nav className={styles.menu}>
           {props.planets.map((planet) => (

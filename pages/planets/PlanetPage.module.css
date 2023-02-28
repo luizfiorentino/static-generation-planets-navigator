@@ -17,6 +17,10 @@
   margin-bottom: 95px;
 }
 
+.menuTablet {
+  display: none;
+}
+
 .planetImg {
   display: flex;
   justify-content: center;
@@ -24,13 +28,15 @@
 }
 
 .desktop {
-  padding: 0 24px 40px 24px;
+  /* padding: 0 24px 40px 24px; */
+  padding: 0;
+  margin: 0;
 }
 
 .bannerAndDescription {
   /* display: flex;
   flex-direction: column; */
-  padding: 0 24px 40px 24px;
+  padding: 0 24px 47px 24px;
 }
 
 .middleSection {
@@ -61,7 +67,11 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-bottom: 47px;
+  /* padding-bottom: 47px; */
+}
+
+.infoTabsDesktop {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -72,6 +82,7 @@
 
   .desktop {
     display: inline;
+    /* flex-direction: column; */
   }
 
   .middleSection {
@@ -83,12 +94,16 @@
     padding: 0;
   } */
 
+  .tabletCenter {
+    display: flex;
+  }
+
   .bannerAndDescription {
     /* display: flex;
     flex-direction: column; */
     display: flex;
     /* justify-content: space-between; */
-    flex-direction: row;
+    flex-direction: column;
     padding: 0;
   }
 
@@ -104,6 +119,7 @@
   .pageTabs {
     display: flex;
     align-items: center;
+    justify-content: right;
     width: 100%;
     padding: 0;
   }
@@ -153,13 +169,32 @@
     justify-content: end;
   }
 
+  .tabletCenter {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+  }
+
   .bannerAndDescription {
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
     display: flex;
     flex-direction: column;
   }
 
   .infoTabs {
+    /* gap: 30px; */
+    display: none;
+  }
+
+  .infoTabsDesktop {
     gap: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 36px;
+  }
+
+  .pageTabs {
+    justify-content: left;
   }
 }

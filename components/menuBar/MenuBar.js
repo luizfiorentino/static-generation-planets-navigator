@@ -3,31 +3,40 @@ import styles from "./MenuBar.module.css";
 import ItemSelector from "../itemSelector/ItemSelector";
 import data from "../../pages/data.json";
 import { useState } from "react";
+import PlanetItem from "../planetItem/PlanetItem";
 
-export default function MenuBar({ variant = "main", ...items }) {
+export default function MenuBar({ variant = "main", ...props }) {
   const [itemSelected, setItemSelected] = useState(0);
 
-  const setItem = (item) => {
-    console.log("item selected->", itemSelected);
+  const planets = [
+    "Mercury",
+    "Venus",
+    "Earth",
+    "Mars",
+    "Jupiter",
+    "Saturn",
+    "Uranus",
+    "Neptune",
+  ];
 
-    console.log("setItem", setItem);
+  console.log("menuBar itemselected", itemSelected);
+
+  const setItem = (item) => {
     setItemSelected(item);
-    console.log("item:::", item);
   };
 
-  console.log("variant: items:", items);
   return (
     <div>
       <div
-        {...items}
+        {...props}
         className={variant === "main" ? styles.main : styles.mobile}
       >
         <div className={styles.mobileInner}>
           {variant === "mobile"
-            ? items.items.map((item) => (
+            ? props?.items?.map((item) => (
                 <ItemSelector
                   key={item}
-                  item={items.items.indexOf(item)}
+                  item={props.items.indexOf(item)}
                   variant="pageMenu"
                   setItem={setItem}
                   itemSelected={itemSelected}
@@ -36,7 +45,14 @@ export default function MenuBar({ variant = "main", ...items }) {
                 </ItemSelector>
               ))
             : undefined}
-        </div>{" "}
+        </div>
+        <div className={styles.planetMenu}>
+          {props?.planets
+            ? planets.map((planet) => (
+                <ItemSelector key={planet}>{planet}</ItemSelector>
+              ))
+            : undefined}
+        </div>
       </div>
       <div className={styles.mobileFooter}>
         <div
@@ -45,18 +61,14 @@ export default function MenuBar({ variant = "main", ...items }) {
               ? styles.mobileBottomActive
               : styles.mobileBottomInactive
           }
-        >
-          {/* <div></div> */}
-        </div>
+        ></div>
         <div
           className={
             itemSelected === 1
               ? styles.mobileBottomActive
               : styles.mobileBottomInactive
           }
-        >
-          {/* <div></div> */}
-        </div>
+        ></div>
         <div
           className={
             itemSelected === 2

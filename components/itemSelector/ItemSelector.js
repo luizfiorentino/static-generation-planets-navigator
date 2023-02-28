@@ -1,11 +1,19 @@
 import React from "react";
 import styles from "./ItemSelector.module.css";
+import Link from "next/link";
 
 export default function ItemSelector(props) {
   console.log("item selector props=", props);
 
   return (
-    <h5
+    <Link
+      href={
+        props.children !== "Structure" &&
+        props.children !== "Overview" &&
+        props.children !== "Surface"
+          ? props.children
+          : "/"
+      }
       className={
         props.item !== props.itemSelected
           ? `${styles.main} ${styles[props.variant]}`
@@ -14,6 +22,6 @@ export default function ItemSelector(props) {
       onClick={() => props.setItem(props.item)}
     >
       {props.children}
-    </h5>
+    </Link>
   );
 }

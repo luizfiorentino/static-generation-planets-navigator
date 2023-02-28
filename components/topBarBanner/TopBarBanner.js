@@ -7,7 +7,7 @@ export default function TopBarBanner(props) {
   return (
     <h2
       className={
-        props.className === "primary" ? styles.main : styles.planetBanner
+        props.variant === "primary" ? styles.main : styles.planetBanner
       }
     >
       {props.children}

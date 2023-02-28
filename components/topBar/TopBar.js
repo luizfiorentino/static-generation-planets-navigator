@@ -6,7 +6,7 @@ import MenuBar from "../menuBar/MenuBar";
 
 export default function TopBar(props) {
   const variant = props.variant;
-  console.log("topbar variant", variant);
+  console.log("topbar props", variant);
   return (
     <div className={`${styles.main} ${styles[props.variant]}`}>
       <div className={styles.banner}>
@@ -24,6 +24,7 @@ export default function TopBar(props) {
       <div className={styles.planetsMenu}>
         <MenuBar items={props.items} />
       </div>
+      <MenuBar planets={props.planets} />
     </div>
   );
 }
