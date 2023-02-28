@@ -18,7 +18,12 @@ export default function MobileMenu(props) {
 
       <nav className={styles.menu}>
         {props.planets.map((planet) => (
-          <PlanetTab key={planet} planet={planet}>
+          <PlanetTab
+            key={planet}
+            planet={planet}
+            displayMobileMenu={props.displayMobileMenu}
+            setDisplayMobileMenu={props.setDisplayMobileMenu}
+          >
             {" "}
           </PlanetTab>
         ))}

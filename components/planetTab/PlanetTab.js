@@ -12,12 +12,20 @@ export default function PlanetTab(props) {
       <div className={styles.iconAndName}>
         <div className={`${styles[planetName]} ${styles.circle}`}></div>
 
-        <Link key={props.planet} href={`/planets/${props.planet}`}>
+        <Link
+          key={props.planet}
+          href={`/planets/${props.planet.toLowerCase()}`}
+          onClick={() => props.setDisplayMobileMenu(!props.displayMobileMenu)}
+        >
           <button className={styles.button}>{props.planet}</button>
         </Link>
       </div>
 
-      <Link key={props.planet} href={`/planets/${props.planet}`}>
+      <Link
+        key={props.planet}
+        href={`/planets/${props.planet.toLowerCase()}`}
+        onClick={() => props.setDisplayMobileMenu(!props.displayMobileMenu)}
+      >
         <img src={ChevronIcon.src} />
       </Link>
     </div>

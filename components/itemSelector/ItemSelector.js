@@ -3,7 +3,7 @@ import styles from "./ItemSelector.module.css";
 import Link from "next/link";
 
 export default function ItemSelector(props) {
-  console.log("item selector props=", props);
+  //console.log("item selector props=", props);
 
   return (
     <Link

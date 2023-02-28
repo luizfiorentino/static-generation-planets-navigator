@@ -8,24 +8,24 @@ import { useState } from "react";
 export default function TopBar2(props) {
   const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-  console.log("TopBar2 props-> ", props);
+  //console.log("TopBar2 props-> ", props);
 
   const pages = ["Overview", "Structure", "Surface"];
 
   const planets = [
-    "Mercury",
-    "Venus",
-    "Earth",
-    "Mars",
-    "Jupiter",
-    "Saturn",
-    "Uranus",
-    "Neptune",
+    "mercury",
+    "venus",
+    "earth",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
   ];
   const setItem = (page) => {
     setItemSelected(page);
   };
-  console.log("Menu2 props:", props);
+  //console.log("Menu2 props:", props);
   return (
     <div className={styles.main}>
       <div className={styles.innerTop}>

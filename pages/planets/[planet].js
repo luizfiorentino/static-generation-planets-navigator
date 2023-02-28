@@ -21,7 +21,7 @@ export default function PlanetPage(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
   const menuItems = ["Overview", "Structure", "Surface"];
-  console.log("planetPage props::::", props);
+  //console.log("planetPage props::::", props);
 
   const pages = ["Overview", "Structure", "Surface"];
 
@@ -42,11 +42,11 @@ export default function PlanetPage(props) {
   ];
 
   const setPage = (page) => {
-    console.log("SET PAGE:::::", page);
+    //console.log("SET PAGE:::::", page);
     setActiveTab(page);
     return page;
   };
-  console.log("page::::::::", activeTab);
+  //console.log("page::::::::", activeTab);
 
   if (displayMobileMenu === false) {
     return (
