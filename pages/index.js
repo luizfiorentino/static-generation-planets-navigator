@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import TopBar2 from "@/components/topBar2/TopBar2";
+import { useState } from "react";
 //import data from "./data.json";
 
 import TopBar from "@/components/topBar/TopBar";
@@ -12,7 +13,9 @@ import getPlanetContent from "@/utils";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
+  const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   console.log("index.js props", props);
+
   //console.log("data::", data);
   // const planets = data.map((planet, key={}) => planet.name);
   // console.log("index.js - props:", props);
@@ -36,7 +39,11 @@ export default function Home(props) {
       </Head>
       <main className={styles.main}>
         {/* <TopBar variant="menu" /> */}
-        <TopBar2 variant="menu" />
+        <TopBar2
+          variant="menu"
+          displayMobileMenu={displayMobileMenu}
+          setDisplayMobileMenu={setDisplayMobileMenu}
+        />
 
         <nav className={styles.menu}>
           {props.planets.map((planet) => (

@@ -11,7 +11,7 @@ export default function ItemSelector(props) {
         props.children !== "Structure" &&
         props.children !== "Overview" &&
         props.children !== "Surface"
-          ? props.children
+          ? props.children.toLowerCase()
           : "/"
       }
       className={
