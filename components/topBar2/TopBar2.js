@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function TopBar2(props) {
   const [itemSelected, setItemSelected] = useState(0);
+  const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
   const pages = ["Overview", "Structure", "Surface"];
 
@@ -36,7 +37,13 @@ export default function TopBar2(props) {
                 : styles.hamburgerIcon
             }
           >
-            <HamburgerIconTb />
+            <HamburgerIconTb
+              {...props}
+              onClick={() => {
+                props.setDisplayMobileMenu(!props.displayMobileMenu);
+                setDisplayMobileMenu(!displayMobileMenu);
+              }}
+            />
           </div>
         </div>
       </div>

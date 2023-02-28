@@ -6,13 +6,14 @@ import Link from "next/link";
 export default function HamburgerIconTb(props) {
   console.log("props.", props);
   return (
-    <Link href={"/"}>
-      {" "}
-      <img
-        className={styles.main}
-        src={HamburgerIcon.src}
-        alt="a hamburger icon"
-      />
-    </Link>
+    // <Link href={"/"}>
+
+    <img
+      {...props}
+      className={styles.main}
+      src={HamburgerIcon.src}
+      alt="a hamburger icon"
+    />
+    // </Link>
   );
 }
