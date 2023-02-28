@@ -14,6 +14,7 @@ import PageMenuTab from "@/components/pageMenuTab/PageMenuTab";
 import getPlanetContent from "@/utils";
 import TopBar2 from "@/components/topBar2/TopBar2";
 import PlanetTab from "@/components/planetTab/PlanetTab";
+import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
   const [activeTab, setActiveTab] = useState("Overview");
@@ -23,8 +24,6 @@ export default function PlanetPage(props) {
   console.log("planetPage props::::", props);
 
   const pages = ["Overview", "Structure", "Surface"];
-  const dados = props.planetInfo.fields.revolution;
-  console.log("revolution", dados);
 
   const key = Object.keys(props.planetInfo.fields);
   const rotation = key[3];
@@ -61,7 +60,7 @@ export default function PlanetPage(props) {
 
       <MenuBar items={menuItems} variant="mobile" /> */}
         <div className={styles.menuTablet}>
-          <MenuBar planets={planets} variant="tablet" />
+          <MenuBar planets={props.planets} variant="tablet" />
         </div>
 
         <div className={styles.desktop}>
@@ -130,28 +129,11 @@ export default function PlanetPage(props) {
     );
   } else {
     return (
-      <main className={styles.main}>
-        {/* <TopBar variant="menu" /> */}
-        <TopBar2
-          variant="menu"
-          pages={pages}
-          displayMobileMenu={displayMobileMenu}
-          setDisplayMobileMenu={setDisplayMobileMenu}
-        />
-
-        <nav className={styles.menu}>
-          {props.planets.map((planet) => (
-            <PlanetTab key={planet.name} planet={planet.name}>
-              {" "}
-            </PlanetTab>
-          ))}
-        </nav>
-        {/* <div>
-      {planets.map((planet) => (
-        <img key={planet} src={planet?.fields?.image?.fields?.file.url} />
-      ))}
-    </div> */}
-      </main>
+      <MobileMenu
+        displayMobileMenu={displayMobileMenu}
+        setDisplayMobileMenu={setDisplayMobileMenu}
+        planets={planets}
+      />
     );
   }
 }

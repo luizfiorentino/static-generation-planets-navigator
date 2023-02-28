@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@100;400&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+
+.main {
+  margin: 2rem auto;
+
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid red;
+  width: 375px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh; */
+}
+
+.head {
+  margin-bottom: 24px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px 47px 24px;
+}
