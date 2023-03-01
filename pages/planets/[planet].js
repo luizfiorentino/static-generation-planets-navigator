@@ -10,7 +10,7 @@ import SourceLink from "@/components/sourceLink/SourceLink";
 import InfoTab from "@/components/infoTab/InfoTab";
 import PageMenuTab from "@/components/pageMenuTab/PageMenuTab";
 import getPlanetContent from "@/utils";
-import TopBar2 from "@/components/topBar2/TopBar2";
+import TopBar from "@/components/topBar/TopBar";
 import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
@@ -43,7 +43,7 @@ export default function PlanetPage(props) {
   if (displayMobileMenu === false) {
     return (
       <div className={styles.main}>
-        <TopBar2
+        <TopBar
           pages={pages}
           displayMobileMenu={displayMobileMenu}
           setDisplayMobileMenu={setDisplayMobileMenu}

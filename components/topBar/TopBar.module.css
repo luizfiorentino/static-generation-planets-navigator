@@ -1,14 +1,30 @@
-.main {
+.innerTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* margin-bottom: 10px; */
   padding: 16px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 24px;
 }
 
-.planet {
-  margin-bottom: 0;
+.hide {
+  display: none;
+}
+
+.innerBottomPages {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 95px; */
+  padding: 20px 24px;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+.innerBottomPlanets {
+  display: none;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hamburgerIcon {
@@ -20,52 +36,144 @@
   opacity: 0.5;
 }
 
-.planetsMenu {
+.planets {
   display: none;
+}
+
+.desktopMobileFooter {
+  display: none;
+}
+
+.mobileFooter {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
+  padding: 0px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 95px;
+}
+
+.mobileBottomActive {
+  width: 60px;
+  display: flex;
+
+  background-color: #419ebb;
+  height: 2px;
+}
+
+.mobileBottomInactive {
+  width: 80px;
+  display: flex;
+}
+
+.mobileBottomActive:hover {
+  min-height: 4px;
 }
 
 @media screen and (min-width: 768px) {
   .main {
-    padding: 32px 0 0 0;
-    flex-direction: column;
-    justify-content: center;
+    /* display: flex;
+    flex-direction: column; */
   }
-
-  .hamburgerIcon {
+  .topIcon {
     display: none;
   }
 
-  .banner {
-    margin-bottom: 40px;
+  .innerBottomPages {
+    display: none;
   }
 
-  .planetsMenu {
-    width: 100%;
-    display: flex;
-    /* justify-content: space-between; */
+  /* .desktopExternal {
+    display: none;
+  } */
 
-    background-color: aqua;
+  .innerTop {
+    justify-content: center;
+    border-bottom: none;
+
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+
+  .innerBottomPlanets {
+    display: flex;
+    padding: 0 51px 26px 51px;
+    /* margin-bottom: 146px; */
+    margin-bottom: 0;
+    border: none;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  .planets {
+    display: flex;
+  }
+
+  .mobileFooter {
+    margin-bottom: 146px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .main {
-    flex-direction: row;
-
-    padding: 22px 41px 27px 32px;
-
-    /* padding: top  right bottom left */
-    /* border: 1px solid red; */
-    margin-bottom: 243px;
-  }
-
-  .planetsMenu {
-    justify-content: right;
-  }
-  .banner {
-    /* border: 1px solid green;
     display: flex;
+    /* width: 100%; */
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* padding: 22px 41px 27px 32px; */
+    padding: 22px 40px 27px 32px;
+  }
+
+  .desktopExternal {
+    margin: 0px;
+    border: none;
+    position: relative;
+    top: -22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileFooter {
+    display: none;
+  }
+
+  .desktopMobileFooter {
+    display: flex;
+    justify-items: center;
+
+    padding-bottom: 2rem;
+  }
+
+  .innerTop {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+    margin-bottom: 0;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .innerBottomPlanets {
+    min-width: 666px;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding: 0;
+
+    justify-content: space-between;
+  }
+
+  .desktop {
+    /* display: flex;
+    flex-direction: column;
     align-items: center; */
-    margin: 0;
+  }
+
+  .planets {
+    height: 3px;
   }
 }

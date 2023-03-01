@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./MobileMenu.module.css";
-import TopBar2 from "../topBar2/TopBar2";
+import TopBar from "../topBar/TopBar";
 import PlanetTab from "../planetTab/PlanetTab";
 
 export default function MobileMenu(props) {
@@ -9,8 +9,7 @@ export default function MobileMenu(props) {
 
   return (
     <main className={styles.main}>
-      {/* <TopBar variant="menu" /> */}
-      <TopBar2
+      <TopBar
         variant="menu"
         pages={pages}
         displayMobileMenu={props.displayMobileMenu}
