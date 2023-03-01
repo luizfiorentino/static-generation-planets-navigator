@@ -1,0 +1,175 @@
+.main {
+  margin: auto;
+  width: 375px;
+  /* height: 100vh; */
+  background-image: url("../../components/assets/background-stars.svg");
+}
+
+.mobileMenuBar {
+  margin-bottom: 95px;
+}
+
+.menuTablet {
+  display: none;
+}
+
+.planetImg {
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 98px; */
+}
+
+.desktop {
+  margin: 0;
+}
+
+.bannerAndDescription {
+  padding: 0 24px 47px 24px;
+}
+
+.middleSection {
+  display: flex;
+}
+
+.planetBanner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 11px;
+}
+
+.link {
+  margin-bottom: 28px;
+}
+
+.pageTabs {
+  display: none;
+}
+
+.infoTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.infoTabsDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    width: 768px;
+    padding: 0px;
+  }
+
+  .desktop {
+    display: inline;
+  }
+
+  .middleSection {
+    min-width: 340px;
+    margin-right: 69px;
+  }
+
+  .tabletCenter {
+    display: flex;
+    padding: 0 40px;
+  }
+
+  .bannerAndDescription {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .planetImg {
+    display: flex;
+    justify-content: center;
+    min-height: 460px;
+    /* margin-bottom: 130px; */
+  }
+
+  .middleSection {
+    /* margin-bottom: 27px; */
+    margin: 0;
+  }
+  .pageTabs {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    max-width: 280px;
+  }
+  .bannerAndContent {
+    display: flex;
+    flex-direction: column;
+    max-width: 340px;
+    margin-right: 70px;
+  }
+
+  .planetBanner {
+    display: flex;
+    justify-content: left;
+  }
+
+  .infoTabs {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px 36px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main {
+    width: 1440px;
+    padding: 0px;
+  }
+
+  .desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 96px 165px 76px 189px;
+  }
+
+  .tabletCenter {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+  }
+
+  .bannerAndDescription {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infoTabs {
+    display: none;
+  }
+
+  .infoTabsDesktop {
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding: 0 165px 36px 189px; -> this should be the rule*/
+    padding: 0 120px 36px 141px;
+  }
+
+  .planetBanner {
+    margin-bottom: 23px;
+  }
+
+  .pageTabs {
+    justify-content: left;
+  }
+
+  .planetImg {
+    margin: 0;
+  }
+
+  .bannerAndContent {
+    max-width: 350px;
+    margin-right: 0;
+  }
+}
