@@ -128,8 +128,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 189px;
-    padding-right: 165px;
+
+    padding: 96px 165px 76px 189px;
   }
 
   .tabletCenter {
@@ -152,7 +152,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 36px;
+    /* padding: 0 165px 36px 189px; -> this should be the rule*/
+    padding: 0 120px 36px 141px;
+  }
+
+  .planetBanner {
+    margin-bottom: 23px;
   }
 
   .pageTabs {
@@ -161,5 +166,10 @@
 
   .planetImg {
     margin: 0;
+  }
+
+  .bannerAndContent {
+    max-width: 350px;
+    margin-right: 0;
   }
 }

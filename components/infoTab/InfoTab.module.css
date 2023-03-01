@@ -51,6 +51,8 @@
 @media screen and (min-width: 1440px) {
   .main {
     width: 100%;
+    min-height: 128px;
     margin-bottom: 56px;
+    padding: 0;
   }
 }
