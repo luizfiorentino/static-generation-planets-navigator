@@ -12,6 +12,7 @@
   .main {
     display: flex;
     text-align: left;
+    margin-bottom: 32px;
   }
 }
 
