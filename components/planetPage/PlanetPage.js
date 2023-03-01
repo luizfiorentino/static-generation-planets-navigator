@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./PlanetPage.module.css";
 import { useState } from "react";
-import getPlanetContent from "@/utils";
+// import getPlanetContent from "@/utils";
 
 import MenuBar from "@/components/menuBar/MenuBar";
 import PlanetImage from "@/components/planetImage/PlanetImage";
@@ -16,6 +16,8 @@ import MobileMenu from "@/components/mobileMenu/MobileMenu";
 export default function PlanetPage(props) {
   const [activeTab, setActiveTab] = useState("Overview");
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
+
+  console.log("PlanetPage component image", props.img);
 
   const pages = ["Overview", "Structure", "Surface"];
 
@@ -57,7 +59,8 @@ export default function PlanetPage(props) {
           <div className={styles.planetImg}>
             <PlanetImage
               className={styles.imageInner}
-              image={props.planetInfo.fields.image.fields.file.url}
+              //   image={props.planetInfo.fields.image.fields.file.url}
+              image={props.img}
             />
           </div>
           <div className={styles.bannerAndDescription}>
@@ -71,7 +74,8 @@ export default function PlanetPage(props) {
                   </div>
                   <div className={styles.descriptionAndLink}>
                     <div className={styles.description}>
-                      <Description text={props.planetInfo.fields.description} />
+                      {/* <Description text={props.planetInfo.fields.description} /> */}
+                      <Description text={props.content} />
                     </div>
                     <div className={styles.link}>
                       <SourceLink />
@@ -128,36 +132,36 @@ export default function PlanetPage(props) {
   }
 }
 
-export async function getPlanetInfo(planet) {
-  const items = await getPlanetContent();
-  return items.find((object) => object.fields.name === planet);
-}
+// export async function getPlanetInfo(planet) {
+//   const items = await getPlanetContent();
+//   return items.find((object) => object.fields.name === planet);
+// }
 
-export async function getStaticPaths() {
-  const items = await getPlanetContent();
-  const planetNames = items.map((planet) => {
-    return planet.fields.name;
-  });
+// export async function getStaticPaths() {
+//   const items = await getPlanetContent();
+//   const planetNames = items.map((planet) => {
+//     return planet.fields.name;
+//   });
 
-  return {
-    paths: planetNames.map((planet) => {
-      return { params: { planet: planet.toString() } };
-    }),
+//   return {
+//     paths: planetNames.map((planet) => {
+//       return { params: { planet: planet.toString() } };
+//     }),
 
-    fallback: false,
-  };
-}
+//     fallback: false,
+//   };
+// }
 
-export async function getStaticProps(context) {
-  const planetInfo = await getPlanetInfo(context.params.planet);
-  const items = await getPlanetContent();
-  const planets = items.map((item) => item.fields);
+// export async function getStaticProps(context) {
+//   const planetInfo = await getPlanetInfo(context.params.planet);
+//   const items = await getPlanetContent();
+//   const planets = items.map((item) => item.fields);
 
-  return {
-    props: {
-      planetInfo: planetInfo,
-      planet: context.params.planet,
-      planets: planets,
-    },
-  };
-}
+//   return {
+//     props: {
+//       planetInfo: planetInfo,
+//       planet: context.params.planet,
+//       planets: planets,
+//     },
+//   };
+// }

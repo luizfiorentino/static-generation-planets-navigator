@@ -3,7 +3,16 @@ import PlanetPage from "@/components/planetPage/PlanetPage";
 import getPlanetContent from "@/utils";
 
 export default function Overview(props) {
-  return <PlanetPage {...props} />;
+  const image =
+    "https://static.posters.cz/image/1300/fotobehang/cute-kitten-i77094.jpg";
+
+  return (
+    <PlanetPage
+      {...props}
+      content="How to make a hotdog: 1. boil some water in a pan, 2. let a sausage there for 2min, 3. slice the bread, 4. place the sausage in the bread, 5. put some katchup and eat it!"
+      img={image}
+    />
+  );
 }
 
 export async function getPlanetInfo(planet) {
