@@ -5,7 +5,8 @@ import PlanetTab from "../planetTab/PlanetTab";
 
 export default function MobileMenu(props) {
   const pages = ["Overview", "Structure", "Surface"];
-  console.log("Menu Mobile props->", props);
+  //console.log("Menu Mobile props->", props);
+
   return (
     <main className={styles.main}>
       {/* <TopBar variant="menu" /> */}
@@ -28,11 +29,6 @@ export default function MobileMenu(props) {
           </PlanetTab>
         ))}
       </nav>
-      {/* <div>
-{planets.map((planet) => (
-  <img key={planet} src={planet?.fields?.image?.fields?.file.url} />
-))}
-</div> */}
     </main>
   );
 }

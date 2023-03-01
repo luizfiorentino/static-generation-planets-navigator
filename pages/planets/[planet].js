@@ -1,11 +1,9 @@
 import React from "react";
-//import data from "../data.json";
 import { useState } from "react";
 
 import styles from "./PlanetPage.module.css";
 import MenuBar from "@/components/menuBar/MenuBar";
 import PlanetImage from "@/components/planetImage/PlanetImage";
-
 import TopBarBanner from "@/components/topBarBanner/TopBarBanner";
 import Description from "@/components/description/Description";
 import SourceLink from "@/components/sourceLink/SourceLink";
@@ -13,15 +11,11 @@ import InfoTab from "@/components/infoTab/InfoTab";
 import PageMenuTab from "@/components/pageMenuTab/PageMenuTab";
 import getPlanetContent from "@/utils";
 import TopBar2 from "@/components/topBar2/TopBar2";
-import PlanetTab from "@/components/planetTab/PlanetTab";
 import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
   const [activeTab, setActiveTab] = useState("Overview");
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-
-  const menuItems = ["Overview", "Structure", "Surface"];
-  //console.log("planetPage props::::", props);
 
   const pages = ["Overview", "Structure", "Surface"];
 
@@ -42,11 +36,9 @@ export default function PlanetPage(props) {
   ];
 
   const setPage = (page) => {
-    //console.log("SET PAGE:::::", page);
     setActiveTab(page);
     return page;
   };
-  //console.log("page::::::::", activeTab);
 
   if (displayMobileMenu === false) {
     return (
@@ -56,9 +48,7 @@ export default function PlanetPage(props) {
           displayMobileMenu={displayMobileMenu}
           setDisplayMobileMenu={setDisplayMobileMenu}
         />
-        {/* <TopBar items={menuItems} planets={planets} variant="planet" />
 
-      <MenuBar items={menuItems} variant="mobile" /> */}
         <div className={styles.menuTablet}>
           <MenuBar planets={props.planets} variant="tablet" />
         </div>
@@ -69,7 +59,7 @@ export default function PlanetPage(props) {
               className={styles.imageInner}
               image={props.planetInfo.fields.image.fields.file.url}
             />
-          </div>{" "}
+          </div>
           <div className={styles.bannerAndDescription}>
             <div className={styles.tabletCenter}>
               <div className={styles.middleSection}>
@@ -141,15 +131,13 @@ export default function PlanetPage(props) {
 export async function getPlanetInfo(planet) {
   const items = await getPlanetContent();
   return items.find((object) => object.fields.name === planet);
-
-  //console.log("planet page getPlanetContent items", items);
 }
+
 export async function getStaticPaths() {
   const items = await getPlanetContent();
   const planetNames = items.map((planet) => {
     return planet.fields.name;
   });
-  //console.log("getStaticPaths - planetNames:", planetNames);
 
   return {
     paths: planetNames.map((planet) => {
@@ -159,14 +147,12 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-// combine getStaticProps of index and planetpage
-// (in planetPage) -> you need to pass the planets
+
 export async function getStaticProps(context) {
   const planetInfo = await getPlanetInfo(context.params.planet);
   const items = await getPlanetContent();
   const planets = items.map((item) => item.fields);
 
-  //console.log("planetInfo", planetInfo);
   return {
     props: {
       planetInfo: planetInfo,
@@ -175,18 +161,3 @@ export async function getStaticProps(context) {
     },
   };
 }
-
-// export async function getStaticProps(context) {
-//   const items = await getPlanetContent();
-//   console.log("indexjs items", items);
-//   //const planets = response.items;
-//   // const info = planets.map;
-//   // console.log("top index planets", planets);
-//   const planets = items.map((item) => item.fields);
-
-//   return {
-//     props: {
-//       planets: planets,
-//     },
-//   };
-// }

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./PageMenuTab.module.css";
 
 export default function PageMenuTab(props) {
-  console.log("pageMenuTab props:", props);
+  //console.log("pageMenuTab props:", props);
 
   return (
     <div className={styles.main}>

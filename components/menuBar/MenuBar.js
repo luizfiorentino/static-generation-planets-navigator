@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./MenuBar.module.css";
 import ItemSelector from "../itemSelector/ItemSelector";
-import data from "../../pages/data.json";
 import { useState } from "react";
-import PlanetItem from "../planetItem/PlanetItem";
 
 export default function MenuBar({ variant = "main", ...props }) {
   const [itemSelected, setItemSelected] = useState(0);
@@ -18,8 +16,6 @@ export default function MenuBar({ variant = "main", ...props }) {
     "Uranus",
     "Neptune",
   ];
-
-  console.log("menuBar itemselected", itemSelected);
 
   const setItem = (item) => {
     setItemSelected(item);
