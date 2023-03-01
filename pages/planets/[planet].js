@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
-
 import styles from "./PlanetPage.module.css";
+import getPlanetContent from "@/utils";
+
 import MenuBar from "@/components/menuBar/MenuBar";
 import PlanetImage from "@/components/planetImage/PlanetImage";
 import TopBarBanner from "@/components/topBarBanner/TopBarBanner";
@@ -9,7 +10,6 @@ import Description from "@/components/description/Description";
 import SourceLink from "@/components/sourceLink/SourceLink";
 import InfoTab from "@/components/infoTab/InfoTab";
 import PageMenuTab from "@/components/pageMenuTab/PageMenuTab";
-import getPlanetContent from "@/utils";
 import TopBar from "@/components/topBar/TopBar";
 import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
