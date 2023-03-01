@@ -1,7 +1,7 @@
 .main {
   margin: auto;
   width: 375px;
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url("../../components/assets/background-stars.svg");
 }
 
@@ -16,7 +16,7 @@
 .planetImg {
   display: flex;
   justify-content: center;
-  margin-bottom: 98px;
+  /* margin-bottom: 98px; */
 }
 
 .desktop {
@@ -129,7 +129,9 @@
   .desktop {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
+    padding-left: 189px;
+    padding-right: 165px;
   }
 
   .tabletCenter {
@@ -157,5 +159,9 @@
 
   .pageTabs {
     justify-content: left;
+  }
+
+  .planetImg {
+    margin: 0;
   }
 }

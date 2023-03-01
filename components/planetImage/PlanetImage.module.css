@@ -1,23 +1,34 @@
 .main {
   display: flex;
-
+  max-height: 300px;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .inner {
-  width: 38.5%;
+  transform: scale(0.385);
   /* height: 38.5%; -> generates correct size, but too much vertical space */
 }
 
 @media screen and (min-width: 768px) {
   .main {
-    width: 63%;
+    max-height: 460px;
+  }
+
+  .inner {
+    /* width: 63%; */
+    transform: scale(0.63);
   }
 }
 
 @media screen and (min-width: 1440px) {
   .main {
-    width: 100%;
-    margin: 0;
+    max-height: 754px;
+  }
+
+  .inner {
+    /* width: 63%; */
+    transform: scale(1);
   }
 }
