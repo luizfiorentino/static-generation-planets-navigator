@@ -137,7 +137,7 @@ export default function TopBar(props) {
                 key={planet}
                 item={planets.indexOf(planet)}
                 variant="pageMenu"
-                setItem={setItem}
+                // setItem={setItem}
                 itemSelected={itemSelected}
               >
                 {planet}

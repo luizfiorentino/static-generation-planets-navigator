@@ -19,7 +19,9 @@ export default function ItemSelector(props) {
           ? `${styles.main} ${styles[props.variant]}`
           : `${styles.mainActive} ${styles[props.variant]}`
       }
-      onClick={() => props.setItem(props.item)}
+      onClick={() =>
+        props.setItem === undefined ? undefined : props.setItem(props.item)
+      }
     >
       {props.children}
     </Link>
