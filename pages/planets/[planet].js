@@ -1,16 +1,53 @@
 import React from "react";
 import PlanetPage from "@/components/planetPage/PlanetPage";
 import getPlanetContent from "@/utils";
+import { useState } from "react";
 
 export default function Overview(props) {
-  const image =
-    "https://static.posters.cz/image/1300/fotobehang/cute-kitten-i77094.jpg";
+  const [selectedTab, setSelectedTab] = useState(0);
+  //console.log("[planet].js selectedTab ->", selectedTab);
+  console.log("Overview props -> ", props);
+
+  const setTab = (page) => {
+    setSelectedTab(page);
+    return page;
+  };
+
+  const text = () => {
+    if (selectedTab === 0) {
+      return props.planetInfo.fields.description;
+    } else if (selectedTab === 1) {
+      return props.planetInfo.fields.internalStructure;
+    } else if (selectedTab === 2) {
+      return props.planetInfo.fields.surfaceGeology;
+    }
+  };
+
+  const content = text();
+
+  const picture = () => {
+    if (selectedTab === 0) {
+      return props.planetInfo.fields.image.fields.file.url;
+    } else if (selectedTab === 1) {
+      return props.planetInfo.fields.internalImage.fields.file.url;
+    } else if (selectedTab === 2) {
+      return props.planetInfo.fields.surfaceImage.fields.file.url;
+    }
+  };
+
+  console.log("content", content);
+
+  const image = picture();
+
+  //console.log("[planet].js props ->", props);
 
   return (
     <PlanetPage
       {...props}
-      content="How to make a hotdog: 1. boil some water in a pan, 2. let a sausage there for 2min, 3. slice the bread, 4. place the sausage in the bread, 5. put some katchup and eat it!"
+      content={content}
       img={image}
+      setTab={setTab}
+      selectedTab={selectedTab}
     />
   );
 }

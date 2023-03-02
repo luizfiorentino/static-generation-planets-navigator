@@ -15,6 +15,7 @@ import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
   const [activeTab, setActiveTab] = useState("Overview");
+  const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
   console.log("PlanetPage component image", props.img);
@@ -39,6 +40,7 @@ export default function PlanetPage(props) {
 
   const setPage = (page) => {
     setActiveTab(page);
+
     return page;
   };
 
@@ -49,6 +51,10 @@ export default function PlanetPage(props) {
           pages={pages}
           displayMobileMenu={displayMobileMenu}
           setDisplayMobileMenu={setDisplayMobileMenu}
+          setTab={props.setTab}
+          itemSelected={itemSelected}
+          selectedTab={props.selectedTab}
+          setPage={setPage}
         />
 
         <div className={styles.menuTablet}>
@@ -84,7 +90,12 @@ export default function PlanetPage(props) {
                 </div>
               </div>
               <div className={styles.pageTabs}>
-                <PageMenuTab index={activeTab} setPage={setPage} />
+                <PageMenuTab
+                  index={activeTab}
+                  setPage={setPage}
+                  setTab={props.setTab}
+                  selectedTab={props.selectedTab}
+                />
               </div>
             </div>
             <div className={styles.infoTabs}>

@@ -5,7 +5,7 @@ import HamburgerIconTb from "../hamburgerIcon/HamburgerIcon";
 import ItemSelector from "../itemSelector/ItemSelector";
 import { useState } from "react";
 
-export default function TopBar2(props) {
+export default function TopBar(props) {
   const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   //console.log("TopBar props-> ", props);
@@ -24,6 +24,7 @@ export default function TopBar2(props) {
   ];
   const setItem = (page) => {
     setItemSelected(page);
+    props.setTab(page);
   };
 
   return (
@@ -147,21 +148,21 @@ export default function TopBar2(props) {
             <div className={styles.mobileFooter}>
               <div
                 className={
-                  itemSelected === 0
+                  props.selectedTab === 0
                     ? styles.mobileBottomActive
                     : styles.mobileBottomInactive
                 }
               ></div>
               <div
                 className={
-                  itemSelected === 1
+                  props.selectedTab === 1
                     ? styles.mobileBottomActive
                     : styles.mobileBottomInactive
                 }
               ></div>
               <div
                 className={
-                  itemSelected === 2
+                  props.selectedTab === 2
                     ? styles.mobileBottomActive
                     : styles.mobileBottomInactive
                 }
