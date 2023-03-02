@@ -60,7 +60,7 @@ export default function TopBar(props) {
             item={pages.indexOf(page)}
             variant="pageMenu"
             setItem={setItem}
-            itemSelected={itemSelected}
+            itemSelected={props.selectedTab}
           >
             {page}
           </ItemSelector>
