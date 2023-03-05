@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./PageMenuTab.module.css";
+import ItemSelector from "../itemSelector/ItemSelector";
 
 export default function PageMenuTab(props) {
   //console.log("pageMenuTab props:", props);
@@ -17,7 +18,7 @@ export default function PageMenuTab(props) {
 
   return (
     <div className={styles.main}>
-      <h5
+      <ItemSelector
         className={
           props.selectedTab === 0
             ? `${styles.tab} ${styles.active}`
@@ -26,27 +27,25 @@ export default function PageMenuTab(props) {
         onClick={() => setItem("Overview")}
       >
         <span className={styles.number}>01</span> Overview
-      </h5>
-      <h5
+      </ItemSelector>
+      <ItemSelector
         className={
           props.selectedTab === 1
             ? `${styles.tab} ${styles.active}`
             : styles.tab
         }
-        onClick={() => setItem("Internal Structure")}
       >
         <span className={styles.number}>02</span> Internal Structure
-      </h5>
-      <h5
+      </ItemSelector>
+      <ItemSelector
         className={
           props.selectedTab === 2
             ? `${styles.tab} ${styles.active}`
             : styles.tab
         }
-        onClick={() => setItem("Surface Geology")}
       >
         <span className={styles.number}>03</span> Surface Geology
-      </h5>
+      </ItemSelector>
     </div>
   );
 }

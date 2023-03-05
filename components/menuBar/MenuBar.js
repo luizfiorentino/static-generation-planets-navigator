@@ -36,6 +36,7 @@ export default function MenuBar({ variant = "main", ...props }) {
                   variant="pageMenu"
                   setItem={setItem}
                   itemSelected={itemSelected}
+                  type="subpageMB"
                 >
                   {item}
                 </ItemSelector>

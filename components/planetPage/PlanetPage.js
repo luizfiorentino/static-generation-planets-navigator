@@ -18,8 +18,9 @@ export default function PlanetPage(props) {
   const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
-  console.log("PlanetPage component image", props.img);
-
+  //console.log("PlanetPage component image", props.img);
+  const planet = props.planet;
+  //console.log("PlanetPage planet:", planet);
   const pages = ["Overview", "Structure", "Surface"];
 
   const key = Object.keys(props?.planetInfo?.fields);
@@ -28,14 +29,14 @@ export default function PlanetPage(props) {
   const radius = key[5];
 
   const planets = [
-    "Mercury",
-    "Venus",
-    "Earth",
-    "Mars",
-    "Jupiter",
-    "Saturn",
-    "Uranus",
-    "Neptune",
+    "mercury",
+    "venus",
+    "earth",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
   ];
 
   const setPage = (page) => {
@@ -55,10 +56,11 @@ export default function PlanetPage(props) {
           itemSelected={itemSelected}
           selectedTab={props.selectedTab}
           setPage={setPage}
+          planet={planet}
         />
 
         <div className={styles.menuTablet}>
-          <MenuBar planets={props.planets} variant="tablet" />
+          {/* <MenuBar planets={props.planets} variant="tablet" type="subpagePP" /> */}
         </div>
 
         <div className={styles.desktop}>
@@ -95,6 +97,7 @@ export default function PlanetPage(props) {
                   setPage={setPage}
                   setTab={props.setTab}
                   selectedTab={props.selectedTab}
+                  type="tabletDesktopMenu"
                 />
               </div>
             </div>

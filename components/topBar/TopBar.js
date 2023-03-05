@@ -10,7 +10,8 @@ export default function TopBar(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   //console.log("TopBar props-> ", props);
 
-  const pages = ["Overview", "Structure", "Surface"];
+  // const pages = ["Overview", "Structure", "Surface"];
+  const pages = ["overview", "structure", "surface"];
 
   const planets = [
     "mercury",
@@ -61,6 +62,12 @@ export default function TopBar(props) {
             variant="pageMenu"
             setItem={setItem}
             itemSelected={props.selectedTab}
+            type="subpageTB"
+            link={
+              pages.indexOf(page) === 0
+                ? `/planets/${props.planet}`
+                : `/planets/${props.planet}/${page}`
+            }
           >
             {page}
           </ItemSelector>

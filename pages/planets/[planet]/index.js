@@ -2,11 +2,12 @@ import React from "react";
 import PlanetPage from "@/components/planetPage/PlanetPage";
 import getPlanetContent from "@/utils";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Overview(props) {
   const [selectedTab, setSelectedTab] = useState(0);
   //console.log("[planet].js selectedTab ->", selectedTab);
-  console.log("Overview props -> ", props);
+  //console.log("Overview props -> ", props);
 
   const setTab = (page) => {
     setSelectedTab(page);
@@ -24,7 +25,6 @@ export default function Overview(props) {
   };
 
   const content = text();
-
   const picture = () => {
     if (selectedTab === 0) {
       return props.planetInfo.fields.image.fields.file.url;
@@ -34,12 +34,34 @@ export default function Overview(props) {
       return props.planetInfo.fields.surfaceImage.fields.file.url;
     }
   };
-
-  console.log("content", content);
-
+  //console.log("content", content);
   const image = picture();
-
   //console.log("[planet].js props ->", props);
+
+  const planets = [
+    "mercury",
+    "venus",
+    "earth",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+  ];
+
+  const subpages = ["structure", "surface"];
+
+  const staticPaths = subpages.map((subpage) => {
+    const addPlanets = planets.map((planet) => {
+      return { params: { planet: planet, subpage: subpage } };
+    });
+    return addPlanets;
+  });
+
+  const mergedArrays = staticPaths[0].concat(staticPaths[1]);
+
+  //   console.log("static paths->", staticPaths);
+  //   console.log("mergedArrays", mergedArrays);
 
   return (
     <PlanetPage
@@ -48,6 +70,7 @@ export default function Overview(props) {
       img={image}
       setTab={setTab}
       selectedTab={selectedTab}
+      type="subpage"
     />
   );
 }
