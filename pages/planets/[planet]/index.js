@@ -70,7 +70,6 @@ export default function Overview(props) {
       img={image}
       setTab={setTab}
       selectedTab={selectedTab}
-      type="subpage"
     />
   );
 }
