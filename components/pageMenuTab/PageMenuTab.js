@@ -3,7 +3,7 @@ import styles from "./PageMenuTab.module.css";
 import ItemSelector from "../itemSelector/ItemSelector";
 
 export default function PageMenuTab(props) {
-  //console.log("pageMenuTab props:", props);
+  console.log("pageMenuTab props:", props);
 
   const setItem = (page) => {
     props.setPage(page);
@@ -25,8 +25,10 @@ export default function PageMenuTab(props) {
             : styles.tab
         }
         onClick={() => setItem("Overview")}
+        link={`/planets/${props.planet}/`}
       >
-        <span className={styles.number}>01</span> Overview
+        {/* <span className={styles.number}>01</span> Overview */}
+        overview
       </ItemSelector>
       <ItemSelector
         className={
@@ -34,8 +36,17 @@ export default function PageMenuTab(props) {
             ? `${styles.tab} ${styles.active}`
             : styles.tab
         }
+        link={
+          `/planets/${props.planet}/structure`
+          //  link={
+          //   pages.indexOf(page) === 0
+          //     ? `/planets/${props.planet}`
+          //     : `/planets/${props.planet}/${page}`
+          // }
+        }
       >
-        <span className={styles.number}>02</span> Internal Structure
+        {/* <span className={styles.number}>02</span> Internal Structure */}
+        structure
       </ItemSelector>
       <ItemSelector
         className={
@@ -43,8 +54,10 @@ export default function PageMenuTab(props) {
             ? `${styles.tab} ${styles.active}`
             : styles.tab
         }
+        link={`/planets/${props.planet}/surface`}
       >
-        <span className={styles.number}>03</span> Surface Geology
+        {/* <span className={styles.number}>03</span> Surface Geology */}
+        surface
       </ItemSelector>
     </div>
   );

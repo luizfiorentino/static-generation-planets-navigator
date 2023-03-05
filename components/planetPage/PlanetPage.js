@@ -97,7 +97,8 @@ export default function PlanetPage(props) {
                   setPage={setPage}
                   setTab={props.setTab}
                   selectedTab={props.selectedTab}
-                  type="tabletDesktopMenu"
+                  // type="tabletDesktopMenu"
+                  planet={planet}
                 />
               </div>
             </div>

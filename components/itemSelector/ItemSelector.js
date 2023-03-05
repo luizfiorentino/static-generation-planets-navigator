@@ -5,6 +5,8 @@ import Link from "next/link";
 export default function ItemSelector(props) {
   console.log("item selector props=", props);
 
+  const reference = props.link ? props.link : "/";
+
   return props.type ? (
     <Link
       href={
@@ -33,9 +35,9 @@ export default function ItemSelector(props) {
         props.children !== "structure" &&
         props.children !== "overview" &&
         props.children !== "surface"
-          ? // ? `/planet/${props.children.toLowerCase()}`
-            `/planets/${props.children}`
-          : "#"
+          ? `/planets/${props.children.toLowerCase()}`
+          : //"#"
+            reference
       }
       className={
         props.item !== props.itemSelected
