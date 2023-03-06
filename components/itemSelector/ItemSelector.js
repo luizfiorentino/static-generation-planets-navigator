@@ -3,7 +3,7 @@ import styles from "./ItemSelector.module.css";
 import Link from "next/link";
 
 export default function ItemSelector(props) {
-  console.log("item selector props=", props);
+  console.log("item selector props=", props.link, props.highlighted);
 
   const reference = props.link ? props.link : "/";
 
@@ -19,12 +19,9 @@ export default function ItemSelector(props) {
             props.link
       }
       className={
-        props.item !== props.itemSelected
-          ? `${styles.main} ${styles[props.variant]}`
-          : `${styles.mainActive} ${styles[props.variant]}`
-      }
-      onClick={() =>
-        props.setItem === undefined ? undefined : props.setItem(props.item)
+        props.highlighted
+          ? `${styles.mainActive} ${styles[props.variant]}`
+          : `${styles.main} ${styles[props.variant]}`
       }
     >
       {props.children}
@@ -40,12 +37,9 @@ export default function ItemSelector(props) {
         // `planets/${props.children}`
       }
       className={
-        props.item !== props.itemSelected
-          ? `${styles.main} ${styles[props.variant]}`
-          : `${styles.mainActive} ${styles[props.variant]}`
-      }
-      onClick={() =>
-        props.setItem === undefined ? undefined : props.setItem(props.item)
+        props.highlighted
+          ? `${styles.mainActive} ${styles[props.variant]}`
+          : `${styles.main} ${styles[props.variant]}`
       }
     >
       {props.children}

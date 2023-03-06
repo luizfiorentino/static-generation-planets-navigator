@@ -5,73 +5,8 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function Overview(props) {
-  const [selectedTab, setSelectedTab] = useState(0);
-  //console.log("[planet].js selectedTab ->", selectedTab);
-  //console.log("Overview props -> ", props);
-
-  const setTab = (page) => {
-    setSelectedTab(page);
-    return page;
-  };
-
-  const text = () => {
-    if (selectedTab === 0) {
-      return props.planetInfo.fields.description;
-    } else if (selectedTab === 1) {
-      return props.planetInfo.fields.internalStructure;
-    } else if (selectedTab === 2) {
-      return props.planetInfo.fields.surfaceGeology;
-    }
-  };
-
-  const content = text();
-  const picture = () => {
-    if (selectedTab === 0) {
-      return props.planetInfo.fields.image.fields.file.url;
-    } else if (selectedTab === 1) {
-      return props.planetInfo.fields.internalImage.fields.file.url;
-    } else if (selectedTab === 2) {
-      return props.planetInfo.fields.surfaceImage.fields.file.url;
-    }
-  };
-  //console.log("content", content);
-  const image = picture();
-  //console.log("[planet].js props ->", props);
-
-  const planets = [
-    "mercury",
-    "venus",
-    "earth",
-    "mars",
-    "jupiter",
-    "saturn",
-    "uranus",
-    "neptune",
-  ];
-
-  const subpages = ["structure", "surface"];
-
-  const staticPaths = subpages.map((subpage) => {
-    const addPlanets = planets.map((planet) => {
-      return { params: { planet: planet, subpage: subpage } };
-    });
-    return addPlanets;
-  });
-
-  const mergedArrays = staticPaths[0].concat(staticPaths[1]);
-
-  //   console.log("static paths->", staticPaths);
-  //   console.log("mergedArrays", mergedArrays);
-
-  return (
-    <PlanetPage
-      {...props}
-      content={content}
-      img={image}
-      setTab={setTab}
-      selectedTab={selectedTab}
-    />
-  );
+  console.log("props:::", props);
+  return <PlanetPage {...props} content={props.content} img={props.image} />;
 }
 
 export async function getPlanetInfo(planet) {
@@ -104,6 +39,9 @@ export async function getStaticProps(context) {
       planetInfo: planetInfo,
       planet: context.params.planet,
       planets: planets,
+      content: planetInfo.fields.description,
+      image: planetInfo.fields.image.fields.file.url,
+      subpage: "overview",
     },
   };
 }

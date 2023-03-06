@@ -57,6 +57,7 @@ export default function PlanetPage(props) {
           selectedTab={props.selectedTab}
           setPage={setPage}
           planet={planet}
+          subpage={props.subpage}
         />
 
         <div className={styles.menuTablet}>

@@ -6,9 +6,9 @@ import ItemSelector from "../itemSelector/ItemSelector";
 import { useState } from "react";
 
 export default function TopBar(props) {
-  const [itemSelected, setItemSelected] = useState(0);
+  //const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-  //console.log("TopBar props-> ", props);
+  console.log("TopBar props-> ", props.subpage);
 
   // const pages = ["Overview", "Structure", "Surface"];
   const pages = ["overview", "structure", "surface"];
@@ -23,10 +23,6 @@ export default function TopBar(props) {
     "uranus",
     "neptune",
   ];
-  const setItem = (page) => {
-    setItemSelected(page);
-    props.setTab(page);
-  };
 
   return (
     <div className={styles.main}>
@@ -60,9 +56,8 @@ export default function TopBar(props) {
             key={page}
             item={pages.indexOf(page)}
             variant="pageMenu"
-            setItem={setItem}
-            itemSelected={props.selectedTab}
             type="subpageTB"
+            highlighted={props.subpage === page}
             link={
               pages.indexOf(page) === 0
                 ? `/planets/${props.planet}`
@@ -80,62 +75,62 @@ export default function TopBar(props) {
         }
       >
         <div className={styles.desktopMobileFooter}>
-          <div
+          {/* <div
             className={
               itemSelected === 0
                 ? styles.mobileBottomActive
                 : styles.mobileBottomInactive
             }
-          ></div>
-          <div
+          ></div> */}
+          {/* <div
             className={
               itemSelected === 1
                 ? styles.mobileBottomActive
                 : styles.mobileBottomInactive
             }
-          ></div>
-          <div
+          ></div> */}
+          {/* <div
             className={
               itemSelected === 2
                 ? styles.mobileBottomActive
                 : styles.mobileBottomInactive
             }
-          ></div>
-          <div
+          ></div> */}
+          {/* <div
             className={
               itemSelected === 3
                 ? styles.mobileBottomActive
                 : styles.mobileBottomInactive
             }
-          ></div>
-          <div
+          ></div> */}
+          {/* <div
             className={
               itemSelected === 4
                 ? styles.mobileBottomActive
                 : styles.mobileBottomInactive
             }
-          ></div>
-          <div
+          ></div> */}
+          {/* <div
             className={
               itemSelected === 5
                 ? styles.mobileBottomActive
                 : styles.mobileBottomInactive
             }
-          ></div>
-          <div
+          ></div> */}
+          {/* <div
             className={
               itemSelected === 6
                 ? styles.mobileBottomActive
                 : styles.mobileBottomInactive
             }
-          ></div>
-          <div
+          ></div> */}
+          {/* <div
             className={
               itemSelected === 7
                 ? styles.mobileBottomActive
                 : styles.mobileBottomInactive
             }
-          ></div>
+          ></div> */}
         </div>
         <div className={styles.desktop}>
           <div className={styles.innerBottomPlanets}>
@@ -145,7 +140,7 @@ export default function TopBar(props) {
                 item={planets.indexOf(planet)}
                 variant="pageMenu"
                 // setItem={setItem}
-                itemSelected={itemSelected}
+                // itemSelected={itemSelected}
                 type="planetLinks"
                 link={`/planets/${planet}`}
               >
@@ -153,8 +148,8 @@ export default function TopBar(props) {
               </ItemSelector>
             ))}
           </div>
-          <div className={styles.pages}>
-            <div className={styles.mobileFooter}>
+          {/* <div className={styles.pages}> */}
+          {/* <div className={styles.mobileFooter}>
               <div
                 className={
                   props.selectedTab === 0
@@ -176,10 +171,10 @@ export default function TopBar(props) {
                     : styles.mobileBottomInactive
                 }
               ></div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
 
-          <div className={styles.planets}>
+          {/* <div className={styles.planets}>
             <div className={styles.mobileFooter}>
               <div
                 className={
@@ -238,7 +233,7 @@ export default function TopBar(props) {
                 }
               ></div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

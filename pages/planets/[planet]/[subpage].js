@@ -29,38 +29,15 @@ const staticPaths = subpages.map((subpage) => {
 const mergedArrays = staticPaths[0].concat(staticPaths[1]);
 
 export default function Subpage(props) {
-  const [selectedTab, setSelectedTab] = useState(0);
   //console.log("[planet].js selectedTab ->", selectedTab);
-  //console.log("Subpage props -> ", props);
-
-  const setTab = (page) => {
-    setSelectedTab(page);
-    return page;
-  };
-
-  const picture = () => {
-    if (selectedTab === 0) {
-      return props.planetInfo.fields.image.fields.file.url;
-    } else if (selectedTab === 1) {
-      return props.planetInfo.fields.internalImage.fields.file.url;
-    } else if (selectedTab === 2) {
-      return props.planetInfo.fields.surfaceImage.fields.file.url;
-    }
-  };
-  //console.log("content", content);
-  const image = picture();
-  //console.log("[planet].js props ->", props);
-
-  //   console.log("static paths->", staticPaths);
-  //   console.log("mergedArrays", mergedArrays);
+  console.log("Subpage props -> ", props);
 
   return (
     <PlanetPage
       {...props}
       content={props.content}
       img={props.image}
-      setTab={setTab}
-      selectedTab={selectedTab}
+      subpage={props.subpage}
     />
   );
 }
@@ -115,6 +92,7 @@ export async function getStaticProps(context) {
       planets: planets,
       content: text,
       image: image,
+      subpage: context.params.subpage,
     },
   };
 

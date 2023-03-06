@@ -6,6 +6,7 @@
   font-weight: 00;
   letter-spacing: 1px;
   text-transform: uppercase;
+  padding-bottom: 20px;
 }
 
 .pageMenu {
@@ -20,4 +21,5 @@
   font-weight: 00;
   letter-spacing: 1px;
   text-transform: uppercase;
+  border-bottom: 2px solid red;
 }
