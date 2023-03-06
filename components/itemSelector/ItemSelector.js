@@ -14,7 +14,7 @@ export default function ItemSelector(props) {
         props.children !== "overview" &&
         props.children !== "surface"
           ? // ? `/planet/${props.children.toLowerCase()}`
-            props.children
+            props.link
           : // : `${props.planet}/${props.children}`
             props.link
       }
@@ -35,9 +35,9 @@ export default function ItemSelector(props) {
         props.children !== "structure" &&
         props.children !== "overview" &&
         props.children !== "surface"
-          ? `/planets/${props.children.toLowerCase()}`
-          : //"#"
-            reference
+          ? `/`
+          : reference
+        // `planets/${props.children}`
       }
       className={
         props.item !== props.itemSelected

@@ -146,6 +146,8 @@ export default function TopBar(props) {
                 variant="pageMenu"
                 // setItem={setItem}
                 itemSelected={itemSelected}
+                type="planetLinks"
+                link={`/planets/${planet}`}
               >
                 {planet}
               </ItemSelector>

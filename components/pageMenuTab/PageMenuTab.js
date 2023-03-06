@@ -3,7 +3,7 @@ import styles from "./PageMenuTab.module.css";
 import ItemSelector from "../itemSelector/ItemSelector";
 
 export default function PageMenuTab(props) {
-  console.log("pageMenuTab props:", props);
+  //console.log("pageMenuTab props:", props);
 
   const setItem = (page) => {
     props.setPage(page);

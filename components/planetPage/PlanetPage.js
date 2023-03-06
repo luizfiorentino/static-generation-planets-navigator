@@ -14,14 +14,14 @@ import TopBar from "@/components/topBar/TopBar";
 import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
-  const [activeTab, setActiveTab] = useState("Overview");
+  const [activeTab, setActiveTab] = useState("overview");
   const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
   //console.log("PlanetPage component image", props.img);
   const planet = props.planet;
   //console.log("PlanetPage planet:", planet);
-  const pages = ["Overview", "Structure", "Surface"];
+  const pages = ["overview", "structure", "surface"];
 
   const key = Object.keys(props?.planetInfo?.fields);
   const rotation = key[3];

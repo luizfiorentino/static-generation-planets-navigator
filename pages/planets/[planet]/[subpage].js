@@ -31,7 +31,7 @@ const mergedArrays = staticPaths[0].concat(staticPaths[1]);
 export default function Subpage(props) {
   const [selectedTab, setSelectedTab] = useState(0);
   //console.log("[planet].js selectedTab ->", selectedTab);
-  console.log("Subpage props -> ", props);
+  //console.log("Subpage props -> ", props);
 
   const setTab = (page) => {
     setSelectedTab(page);
