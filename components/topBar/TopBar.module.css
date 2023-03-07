@@ -126,7 +126,7 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     /* padding: 22px 41px 27px 32px; */
-    padding: 22px 40px 27px 32px;
+    padding: 0px 40px 0px 32px;
   }
 
   .desktopExternal {
@@ -143,8 +143,10 @@
   }
 
   .desktopMobileFooter {
-    display: flex;
+    display: inline;
     justify-items: center;
+    height: 0;
+    margin-top: -10px;
 
     padding-bottom: 2rem;
   }

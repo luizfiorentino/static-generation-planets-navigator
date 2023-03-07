@@ -127,7 +127,7 @@
   .desktop {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: right;
 
     padding: 96px 165px 76px 189px;
   }
@@ -136,6 +136,9 @@
     display: flex;
     flex-direction: column;
     max-width: 350px;
+    padding: 0 0 0 40px;
+    /* hier must adjust! */
+    margin-left: 130px;
   }
 
   .bannerAndDescription {
