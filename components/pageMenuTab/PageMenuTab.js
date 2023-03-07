@@ -5,26 +5,14 @@ import ItemSelector from "../itemSelector/ItemSelector";
 export default function PageMenuTab(props) {
   //console.log("pageMenuTab props:", props);
 
-  const setItem = (page) => {
-    props.setPage(page);
-    if (page === "Overview") {
-      props.setTab(0);
-    } else if (page === "Internal Structure") {
-      props.setTab(1);
-    } else if (page === "Surface Geology") {
-      props.setTab(2);
-    }
-  };
-
   return (
     <div className={styles.main}>
       <ItemSelector
         className={
-          props.selectedTab === 0
+          props.subpage === "overview"
             ? `${styles.tab} ${styles.active}`
             : styles.tab
         }
-        onClick={() => setItem("Overview")}
         link={`/planets/${props.planet}/`}
       >
         {/* <span className={styles.number}>01</span> Overview */}
@@ -32,7 +20,7 @@ export default function PageMenuTab(props) {
       </ItemSelector>
       <ItemSelector
         className={
-          props.selectedTab === 1
+          props.subpage === "structure"
             ? `${styles.tab} ${styles.active}`
             : styles.tab
         }
@@ -50,7 +38,7 @@ export default function PageMenuTab(props) {
       </ItemSelector>
       <ItemSelector
         className={
-          props.selectedTab === 2
+          props.subpage === "surface"
             ? `${styles.tab} ${styles.active}`
             : styles.tab
         }

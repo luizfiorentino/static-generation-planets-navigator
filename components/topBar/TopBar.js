@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function TopBar(props) {
   //const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-  console.log("TopBar props-> ", props.subpage);
+  //console.log("TopBar props.subpage-> ", props.subpage);
 
   // const pages = ["Overview", "Structure", "Surface"];
   const pages = ["overview", "structure", "surface"];

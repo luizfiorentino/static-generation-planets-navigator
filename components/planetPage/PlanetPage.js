@@ -14,8 +14,6 @@ import TopBar from "@/components/topBar/TopBar";
 import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
-  const [activeTab, setActiveTab] = useState("overview");
-  const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
   //console.log("PlanetPage component image", props.img);
@@ -39,12 +37,6 @@ export default function PlanetPage(props) {
     "neptune",
   ];
 
-  const setPage = (page) => {
-    setActiveTab(page);
-
-    return page;
-  };
-
   if (displayMobileMenu === false) {
     return (
       <div className={styles.main}>
@@ -52,10 +44,6 @@ export default function PlanetPage(props) {
           pages={pages}
           displayMobileMenu={displayMobileMenu}
           setDisplayMobileMenu={setDisplayMobileMenu}
-          setTab={props.setTab}
-          itemSelected={itemSelected}
-          selectedTab={props.selectedTab}
-          setPage={setPage}
           planet={planet}
           subpage={props.subpage}
         />
@@ -94,10 +82,7 @@ export default function PlanetPage(props) {
               </div>
               <div className={styles.pageTabs}>
                 <PageMenuTab
-                  index={activeTab}
-                  setPage={setPage}
-                  setTab={props.setTab}
-                  selectedTab={props.selectedTab}
+                  subpage={props.subpage}
                   // type="tabletDesktopMenu"
                   planet={planet}
                 />

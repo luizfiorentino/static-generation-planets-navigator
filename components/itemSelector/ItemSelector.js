@@ -3,12 +3,13 @@ import styles from "./ItemSelector.module.css";
 import Link from "next/link";
 
 export default function ItemSelector(props) {
-  console.log("item selector props=", props.link, props.highlighted);
+  //console.log("item selector props=", props);
 
   const reference = props.link ? props.link : "/";
 
   return props.type ? (
     <Link
+      {...props}
       href={
         props.children !== "structure" &&
         props.children !== "overview" &&
@@ -20,14 +21,15 @@ export default function ItemSelector(props) {
       }
       className={
         props.highlighted
-          ? `${styles.mainActive} ${styles[props.variant]}`
-          : `${styles.main} ${styles[props.variant]}`
+          ? `${props.className} ${styles.mainActive} ${styles[props.variant]}`
+          : `${props.className} ${styles.main} ${styles[props.variant]}`
       }
     >
       {props.children}
     </Link>
   ) : (
     <Link
+      {...props}
       href={
         props.children !== "structure" &&
         props.children !== "overview" &&
@@ -38,8 +40,8 @@ export default function ItemSelector(props) {
       }
       className={
         props.highlighted
-          ? `${styles.mainActive} ${styles[props.variant]}`
-          : `${styles.main} ${styles[props.variant]}`
+          ? ` ${props.className} ${styles.mainActive} ${styles[props.variant]}`
+          : `${props.className} ${styles.main} ${styles[props.variant]}`
       }
     >
       {props.children}
