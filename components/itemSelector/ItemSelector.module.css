@@ -1,12 +1,14 @@
 .main {
   color: rgba(255, 255, 255, 0.8);
   font-family: "League Spartan", sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 10px;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding-bottom: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .pageMenu {
@@ -29,8 +31,30 @@
   border-bottom: 4px solid #419ebb;
 }
 
+.menuTab {
+  padding: 8px 0px 8px 20px;
+
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  color: #ffffff;
+  font-family: "League Spartan", sans-serif;
+  font-size: 9px;
+  line-height: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menuTabActive {
+  background-color: #419ebb;
+}
+
 @media screen and (min-width: 768px) {
   .main {
     padding-bottom: 24px;
+    font-size: 11px;
+  }
+
+  .mainActive {
+    font-size: 11px;
   }
 }

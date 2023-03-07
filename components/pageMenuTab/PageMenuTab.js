@@ -3,7 +3,7 @@ import styles from "./PageMenuTab.module.css";
 import ItemSelector from "../itemSelector/ItemSelector";
 
 export default function PageMenuTab(props) {
-  //console.log("pageMenuTab props:", props);
+  console.log("pageMenuTab props:", props);
 
   return (
     <div className={styles.main}>
@@ -14,9 +14,9 @@ export default function PageMenuTab(props) {
             : styles.tab
         }
         link={`/planets/${props.planet}/`}
+        highlighted={props.subpage === "overview" ? true : false}
       >
-        {/* <span className={styles.number}>01</span> Overview */}
-        overview
+        <span className={styles.number}>01</span> Overview
       </ItemSelector>
       <ItemSelector
         className={
@@ -32,9 +32,9 @@ export default function PageMenuTab(props) {
           //     : `/planets/${props.planet}/${page}`
           // }
         }
+        highlighted={props.subpage === "structure" ? true : false}
       >
-        {/* <span className={styles.number}>02</span> Internal Structure */}
-        structure
+        <span className={styles.number}>02</span> Internal Structure
       </ItemSelector>
       <ItemSelector
         className={
@@ -43,9 +43,9 @@ export default function PageMenuTab(props) {
             : styles.tab
         }
         link={`/planets/${props.planet}/surface`}
+        highlighted={props.subpage === "surface" ? true : false}
       >
-        {/* <span className={styles.number}>03</span> Surface Geology */}
-        surface
+        <span className={styles.number}>03</span> Surface Geology
       </ItemSelector>
     </div>
   );

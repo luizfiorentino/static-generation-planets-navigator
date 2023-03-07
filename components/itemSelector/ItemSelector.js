@@ -7,7 +7,7 @@ export default function ItemSelector(props) {
 
   const reference = props.link ? props.link : "/";
 
-  return props.type ? (
+  return props.type === "subpageTB" || props.type === "planetLinks" ? (
     <Link
       {...props}
       href={
@@ -20,9 +20,7 @@ export default function ItemSelector(props) {
             props.link
       }
       className={
-        props.highlighted
-          ? `${props.className} ${styles.mainActive} ${styles[props.variant]}`
-          : `${props.className} ${styles.main} ${styles[props.variant]}`
+        props.highlighted ? ` ${styles.mainActive} }` : ` ${styles.main} }`
       }
     >
       {props.children}
@@ -34,14 +32,19 @@ export default function ItemSelector(props) {
         props.children !== "structure" &&
         props.children !== "overview" &&
         props.children !== "surface"
-          ? `/`
-          : reference
+          ? props.link
+          : props.link
         // `planets/${props.children}`
       }
+      // className={
+      //   props.highlighted
+      //     ? ` ${props.className} ${styles.mainActive} ${styles[props.variant]}`
+      //     : `${props.className} ${styles.main} ${styles[props.variant]}`
+      // }
       className={
-        props.highlighted
-          ? ` ${props.className} ${styles.mainActive} ${styles[props.variant]}`
-          : `${props.className} ${styles.main} ${styles[props.variant]}`
+        !props.highlighted
+          ? ` ${styles.menuTab} }`
+          : ` ${styles.menuTab} ${styles.menuTabActive} }`
       }
     >
       {props.children}
