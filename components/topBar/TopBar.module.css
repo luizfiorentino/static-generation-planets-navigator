@@ -100,10 +100,9 @@
 
   .innerBottomPlanets {
     display: flex;
-    padding: 0 51px 26px 51px;
+    padding: 0 51px 0px 51px;
     /* margin-bottom: 146px; */
     margin-bottom: 0;
-    border: none;
   }
 
   .pages {

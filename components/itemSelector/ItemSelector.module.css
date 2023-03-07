@@ -6,7 +6,7 @@
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding-bottom: 20px;
+  padding-bottom: 18px;
 }
 
 .pageMenu {
@@ -27,4 +27,10 @@
 
 .mainActive:hover {
   border-bottom: 4px solid #419ebb;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    padding-bottom: 24px;
+  }
 }

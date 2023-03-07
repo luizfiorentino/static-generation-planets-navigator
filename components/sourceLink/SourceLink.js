@@ -5,7 +5,11 @@ import Icon from "../assets/icon-source.svg";
 export default function SourceLink() {
   return (
     <p className={styles.main}>
-      Source : <span className={styles.link}>Wikipedia</span>
+      Source :{" "}
+      <span className={styles.link}>
+        {" "}
+        <span className={styles.wikiText}>Wikipedia</span>
+      </span>
       <img src={Icon.src} alt="a link icon" />
     </p>
   );
