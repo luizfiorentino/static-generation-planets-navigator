@@ -4,14 +4,14 @@ import TopBar from "../topBar/TopBar";
 import PlanetTab from "../planetTab/PlanetTab";
 
 export default function MobileMenu(props) {
-  const pages = ["Overview", "Structure", "Surface"];
+  //const pages = ["Overview", "Structure", "Surface"];
   //console.log("Menu Mobile props->", props);
 
   return (
     <main className={styles.main}>
       <TopBar
         variant="menu"
-        pages={pages}
+        //pages={pages}
         displayMobileMenu={props.displayMobileMenu}
         setDisplayMobileMenu={props.setDisplayMobileMenu}
       />

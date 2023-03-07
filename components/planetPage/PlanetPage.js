@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./PlanetPage.module.css";
 import { useState } from "react";
-// import getPlanetContent from "@/utils";
 
-import MenuBar from "@/components/menuBar/MenuBar";
 import PlanetImage from "@/components/planetImage/PlanetImage";
 import TopBarBanner from "@/components/topBarBanner/TopBarBanner";
 import Description from "@/components/description/Description";
@@ -16,16 +14,16 @@ import MobileMenu from "@/components/mobileMenu/MobileMenu";
 export default function PlanetPage(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
-  //console.log("PlanetPage component image", props.img);
-  const planet = props.planet;
+  //const planet = props.planet;
   //console.log("PlanetPage planet:", planet);
-  const pages = ["overview", "structure", "surface"];
+  //const pages = ["overview", "structure", "surface"];
 
-  const key = Object.keys(props?.planetInfo?.fields);
+  const key = Object.keys(props.planetInfo.fields);
   const rotation = key[3];
   const revolution = key[4];
   const radius = key[5];
 
+  // using this variable to display the planets in the right order on MobileMenu
   const planets = [
     "mercury",
     "venus",
@@ -41,24 +39,18 @@ export default function PlanetPage(props) {
     return (
       <div className={styles.main}>
         <TopBar
-          pages={pages}
+          //pages={pages}
           displayMobileMenu={displayMobileMenu}
           setDisplayMobileMenu={setDisplayMobileMenu}
-          planet={planet}
+          planet={props.planet}
           subpage={props.subpage}
         />
 
-        <div className={styles.menuTablet}>
-          {/* <MenuBar planets={props.planets} variant="tablet" type="subpagePP" /> */}
-        </div>
+        <div className={styles.menuTablet}></div>
 
         <div className={styles.desktop}>
           <div className={styles.planetImg}>
-            <PlanetImage
-              className={styles.imageInner}
-              //   image={props.planetInfo.fields.image.fields.file.url}
-              image={props.img}
-            />
+            <PlanetImage className={styles.imageInner} image={props.img} />
           </div>
           <div className={styles.bannerAndDescription}>
             <div className={styles.tabletCenter}>
@@ -84,7 +76,7 @@ export default function PlanetPage(props) {
                 <PageMenuTab
                   subpage={props.subpage}
                   // type="tabletDesktopMenu"
-                  planet={planet}
+                  planet={props.planet}
                 />
               </div>
             </div>
@@ -132,37 +124,3 @@ export default function PlanetPage(props) {
     );
   }
 }
-
-// export async function getPlanetInfo(planet) {
-//   const items = await getPlanetContent();
-//   return items.find((object) => object.fields.name === planet);
-// }
-
-// export async function getStaticPaths() {
-//   const items = await getPlanetContent();
-//   const planetNames = items.map((planet) => {
-//     return planet.fields.name;
-//   });
-
-//   return {
-//     paths: planetNames.map((planet) => {
-//       return { params: { planet: planet.toString() } };
-//     }),
-
-//     fallback: false,
-//   };
-// }
-
-// export async function getStaticProps(context) {
-//   const planetInfo = await getPlanetInfo(context.params.planet);
-//   const items = await getPlanetContent();
-//   const planets = items.map((item) => item.fields);
-
-//   return {
-//     props: {
-//       planetInfo: planetInfo,
-//       planet: context.params.planet,
-//       planets: planets,
-//     },
-//   };
-// }
