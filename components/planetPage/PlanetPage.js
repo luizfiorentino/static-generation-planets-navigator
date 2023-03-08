@@ -46,12 +46,7 @@ export default function PlanetPage(props) {
             content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
           />
           <meta property="og:type" content="image&infos" />
-          <meta
-            property="og:url"
-            content={`https://planet-explorer.vercel.app/planets/${
-              props.planet
-            }/${props.subpage ? props.subpage : undefined}`}
-          />
+          <meta property="og:site_name" content="Planet Explorer" />
           <meta property="og:description" content={props.content} />
         </Head>
         <TopBar
