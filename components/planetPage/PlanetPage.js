@@ -14,6 +14,7 @@ import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
+  //console.log("props.image:::", props.image);
 
   //const planet = props.planet;
   //console.log("PlanetPage planet:", planet);
@@ -45,8 +46,12 @@ export default function PlanetPage(props) {
             property="og:title"
             content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
           />
+          <meta property="og:image" content={props.img} />
           <meta property="og:type" content="image&infos" />
-          <meta property="og:site_name" content="Planet Explorer" />
+          <meta
+            property="og:site_name"
+            content="https://planet-explorer.vercel.app"
+          />
           <meta property="og:description" content={props.content} />
         </Head>
         <TopBar
