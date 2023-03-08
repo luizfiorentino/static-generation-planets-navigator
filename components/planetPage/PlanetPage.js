@@ -16,7 +16,7 @@ export default function PlanetPage(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
   const imgCard = props.img.replace("//", "");
-  console.log("props.image::: edited", imgCard);
+  console.log("props.image::: edited", props.img);
   //const planet = props.planet;
   //console.log("PlanetPage planet:", planet);
   //const pages = ["overview", "structure", "surface"];
@@ -46,9 +46,9 @@ export default function PlanetPage(props) {
           <meta
             property="og:title"
             content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
-          />
-          <meta property="og:image" content={`https://${imgCard}`} />
+          />{" "}
           <meta property="og:type" content="image&infos" />
+          <meta property="og:image" content={`https:${props.img}`} />
           <meta
             property="og:site_name"
             content="https://planet-explorer.vercel.app"
