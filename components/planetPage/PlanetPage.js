@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./PlanetPage.module.css";
 import { useState } from "react";
+import Head from "next/head";
 
 import PlanetImage from "@/components/planetImage/PlanetImage";
 import TopBarBanner from "@/components/topBarBanner/TopBarBanner";
@@ -38,6 +39,13 @@ export default function PlanetPage(props) {
   if (displayMobileMenu === false) {
     return (
       <div className={styles.main}>
+        <Head>
+          <title>{`${props.planet} - ${props.subpage}`}</title>
+          <meta
+            property="og:title"
+            content={`${props.planet} - ${props.subpage}`}
+          />
+        </Head>
         <TopBar
           //pages={pages}
           displayMobileMenu={displayMobileMenu}
