@@ -48,7 +48,10 @@ export default function PlanetPage(props) {
             content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
           />{" "}
           <meta property="og:type" content="image&infos" />
-          <meta property="og:image" content={`https:${props.img}`} />
+          <meta
+            property="og:image:type"
+            content={`https:${props.img}/svg+xml`}
+          />
           <meta
             property="og:site_name"
             content="https://planet-explorer.vercel.app"
