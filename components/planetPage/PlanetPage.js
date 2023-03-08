@@ -14,8 +14,9 @@ import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-  //console.log("props.image:::", props.image);
 
+  const imgCard = props.img.replace("//", "");
+  console.log("props.image::: edited", imgCard);
   //const planet = props.planet;
   //console.log("PlanetPage planet:", planet);
   //const pages = ["overview", "structure", "surface"];
@@ -46,7 +47,7 @@ export default function PlanetPage(props) {
             property="og:title"
             content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
           />
-          <meta property="og:image" content={props.img} />
+          <meta property="og:image" content={props.imgCard} />
           <meta property="og:type" content="image&infos" />
           <meta
             property="og:site_name"
