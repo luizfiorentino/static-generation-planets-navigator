@@ -47,7 +47,7 @@ export default function PlanetPage(props) {
             property="og:title"
             content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
           />
-          <meta property="og:image" content={props.imgCard} />
+          <meta property="og:image" content={imgCard} />
           <meta property="og:type" content="image&infos" />
           <meta
             property="og:site_name"
