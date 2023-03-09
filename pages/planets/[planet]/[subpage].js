@@ -28,7 +28,7 @@ const staticPaths = subpages.map((subpage) => {
 const mergedArrays = staticPaths[0].concat(staticPaths[1]);
 
 export default function Subpage(props) {
-  console.log("Subpage props.planetInfo -> ", props);
+  //console.log("Subpage props.planetInfo -> ", props);
 
   return (
     <PlanetPage

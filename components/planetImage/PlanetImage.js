@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./PlanetImage.module.css";
 
 export default function PlanetImage(props) {
-  console.log("from PlanetImage", props);
+  //console.log("from PlanetImage", props);
 
   if (props.subpage === "overview" || props.subpage === "structure") {
     return (
