@@ -72,7 +72,12 @@ export default function PlanetPage(props) {
 
         <div className={styles.desktop}>
           <div className={styles.planetImg}>
-            <PlanetImage className={styles.imageInner} image={props.img} />
+            <PlanetImage
+              className={styles.imageInner}
+              image={props.img}
+              bgImage={props.bgImage}
+              subpage={props.subpage}
+            />
           </div>
           <div className={styles.bannerAndDescription}>
             <div className={styles.tabletCenter}>

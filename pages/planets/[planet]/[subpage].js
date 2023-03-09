@@ -28,13 +28,14 @@ const staticPaths = subpages.map((subpage) => {
 const mergedArrays = staticPaths[0].concat(staticPaths[1]);
 
 export default function Subpage(props) {
-  //console.log("Subpage props -> ", props);
+  console.log("Subpage props.planetInfo -> ", props);
 
   return (
     <PlanetPage
       {...props}
       content={props.content}
       img={props.image}
+      bgImage={props.bgImage}
       subpage={props.subpage}
     />
   );
@@ -76,10 +77,13 @@ export async function getStaticProps(context) {
     text = planetInfo.fields.surfaceGeology;
   }
   let image;
+  let bgImage;
   if (context.params.subpage === "structure") {
     image = planetInfo.fields.internalImage.fields.file.url;
+    bgImage = null;
   } else {
     image = planetInfo.fields.surfaceImage.fields.file.url;
+    bgImage = planetInfo.fields.image.fields.file.url;
   }
 
   return {
@@ -90,6 +94,7 @@ export async function getStaticProps(context) {
       content: text,
       image: image,
       subpage: context.params.subpage,
+      bgImage: bgImage,
     },
   };
 }

@@ -11,6 +11,23 @@
   /* height: 38.5%; -> generates correct size, but too much vertical space */
 }
 
+.surface {
+  display: flex;
+  /* max-height: 300px; */
+  margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-size: 173px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.magnifyer {
+  position: relative;
+  bottom: -7rem;
+}
+
 @media screen and (min-width: 768px) {
   .main {
     max-height: 460px;
