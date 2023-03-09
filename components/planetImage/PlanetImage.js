@@ -16,16 +16,13 @@ export default function PlanetImage(props) {
     );
   } else {
     return (
-      // <div className={styles.main}>
-      //<div style={{ backgroundImage:`url(${image})` }}>
       <div
         className={styles.surface}
         style={{ backgroundImage: `url(${props.bgImage})` }}
       >
-        {/* <img src={props.bgImage} className={styles.inner} /> */}
         <img
           src={props.image}
-          className={`${styles.inner} ${styles.magnifyer}`}
+          className={`${styles.innerSurface} ${styles.magnifyer}`}
           alt="the image of a planet"
         />
       </div>

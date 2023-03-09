@@ -11,6 +11,10 @@
   /* height: 38.5%; -> generates correct size, but too much vertical space */
 }
 
+.innerSurface {
+  width: 167px;
+}
+
 .surface {
   display: flex;
   /* max-height: 300px; */
@@ -18,9 +22,14 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-size: 173px;
+  background-size: contain;
+
   background-repeat: no-repeat;
   background-position: center;
+  margin: 0 6rem;
+  /* margin-top: -3.3rem; */
+  margin-bottom: 40px;
+  z-index: -10;
 }
 
 .magnifyer {
@@ -31,6 +40,16 @@
 @media screen and (min-width: 768px) {
   .main {
     max-height: 460px;
+  }
+
+  .surface {
+    margin: 0;
+    z-index: -10;
+    width: 28%;
+  }
+  .magnifyer {
+    position: relative;
+    bottom: -5rem;
   }
 
   .inner {
@@ -46,6 +65,6 @@
 
   .inner {
     /* width: 63%; */
-    transform: scale(1);
+    transform: scale(0.63);
   }
 }
