@@ -136,10 +136,10 @@
   .tabletCenter {
     display: flex;
     flex-direction: column;
-    max-width: 350px;
-    padding: 0 0 0 40px;
+    /* max-width: 350px;
+    padding: 0 0 0 40px; */
     /* hier must adjust! */
-    margin-left: 130px;
+    /* margin-left: 130px; */
   }
 
   .bannerAndDescription {
@@ -157,7 +157,8 @@
     flex-direction: row;
     justify-content: space-between;
     /* padding: 0 165px 36px 189px; -> this should be the rule*/
-    padding: 0 120px 36px 141px;
+    /* padding: 0 120px 36px 141px; */
+    padding: 0 165px 36px 189px;
   }
 
   .planetBanner {
