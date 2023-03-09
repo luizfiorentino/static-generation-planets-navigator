@@ -9,7 +9,7 @@ export default function TopBar(props) {
   //const [itemSelected, setItemSelected] = useState(0);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   //console.log("TopBar props.subpage-> ", props.subpage);
-
+  //console.log("topBar props", props);
   // const pages = ["Overview", "Structure", "Surface"];
   const pages = ["overview", "structure", "surface"];
 
@@ -54,6 +54,9 @@ export default function TopBar(props) {
         {pages.map((page) => (
           <ItemSelector
             key={page}
+            planet={props.planet}
+            subpage={props.subpage}
+            color={props.color}
             item={pages.indexOf(page)}
             variant="pageMenu"
             type="subpageTB"
@@ -138,6 +141,7 @@ export default function TopBar(props) {
               <ItemSelector
                 key={planet}
                 item={planets.indexOf(planet)}
+                color={props.color}
                 variant="pageMenu"
                 // setItem={setItem}
                 // itemSelected={itemSelected}

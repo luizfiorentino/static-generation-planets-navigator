@@ -20,6 +20,7 @@ export default function PlanetPage(props) {
   //const planet = props.planet;
   //console.log("PlanetPage planet:", planet);
   //const pages = ["overview", "structure", "surface"];
+  console.log("PlanetPAge props.planet ->", props.planetInfo.fields.color);
 
   const key = Object.keys(props.planetInfo.fields);
   const rotation = key[3];
@@ -64,6 +65,7 @@ export default function PlanetPage(props) {
           setDisplayMobileMenu={setDisplayMobileMenu}
           planet={props.planet}
           subpage={props.subpage}
+          color={props.planetInfo.fields.color}
         />
 
         <div className={styles.menuTablet}></div>
@@ -97,6 +99,7 @@ export default function PlanetPage(props) {
                   subpage={props.subpage}
                   // type="tabletDesktopMenu"
                   planet={props.planet}
+                  color={props.planetInfo.fields.color}
                 />
               </div>
             </div>

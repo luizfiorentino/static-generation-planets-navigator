@@ -5,9 +5,27 @@ import ItemSelector from "../itemSelector/ItemSelector";
 export default function PageMenuTab(props) {
   console.log("pageMenuTab props:", props);
 
+  let backgroundColorOverview;
+  props.subpage === "overview"
+    ? (backgroundColorOverview = props.color)
+    : (backgroundColorOverview = undefined);
+
+  let backgroundColorStructure;
+  props.subpage === "structure"
+    ? (backgroundColorStructure = props.color)
+    : (backgroundColorStructure = undefined);
+
+  let backgroundColorSurface;
+
+  props.subpage === "surface"
+    ? (backgroundColorSurface = props.color)
+    : (backgroundColorSurface = undefined);
+
+  console.log("PageMenuTab backgroundColor ->", backgroundColorOverview);
   return (
     <div className={styles.main}>
       <ItemSelector
+        style={{ backgroundColor: backgroundColorOverview }}
         className={
           props.subpage === "overview"
             ? `${styles.tab} ${styles.active}`
@@ -19,6 +37,7 @@ export default function PageMenuTab(props) {
         <span className={styles.number}>01</span> Overview
       </ItemSelector>
       <ItemSelector
+        style={{ backgroundColor: backgroundColorStructure }}
         className={
           props.subpage === "structure"
             ? `${styles.tab} ${styles.active}`
@@ -37,6 +56,7 @@ export default function PageMenuTab(props) {
         <span className={styles.number}>02</span> Internal Structure
       </ItemSelector>
       <ItemSelector
+        style={{ backgroundColor: backgroundColorSurface }}
         className={
           props.subpage === "surface"
             ? `${styles.tab} ${styles.active}`
