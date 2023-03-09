@@ -109,6 +109,7 @@
   .planetBanner {
     display: flex;
     justify-content: left;
+    margin-bottom: 0;
   }
 
   .infoTabs {

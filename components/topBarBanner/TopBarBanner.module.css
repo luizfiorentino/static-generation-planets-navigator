@@ -23,6 +23,17 @@
   margin-bottom: 11px;
 }
 
+@media screen and (min-width: 768px) {
+  .planetBanner {
+    font-size: 48px;
+    line-height: 62px;
+  }
+
+  .planetBanner {
+    margin-bottom: 24px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .main {
     min-width: 109px;
