@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ItemSelector(props) {
   //console.log("item selector props=", props);
-  console.log("item Selector props.color->", props.color);
+  //console.log("item Selector props.color->", props.color);
 
   const reference = props.link ? props.link : "/";
 

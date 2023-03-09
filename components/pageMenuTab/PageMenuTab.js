@@ -3,7 +3,7 @@ import styles from "./PageMenuTab.module.css";
 import ItemSelector from "../itemSelector/ItemSelector";
 
 export default function PageMenuTab(props) {
-  console.log("pageMenuTab props:", props);
+  //console.log("pageMenuTab props:", props);
 
   let backgroundColorOverview;
   props.subpage === "overview"
@@ -21,7 +21,7 @@ export default function PageMenuTab(props) {
     ? (backgroundColorSurface = props.color)
     : (backgroundColorSurface = undefined);
 
-  console.log("PageMenuTab backgroundColor ->", backgroundColorOverview);
+  //console.log("PageMenuTab backgroundColor ->", backgroundColorOverview);
   return (
     <div className={styles.main}>
       <ItemSelector

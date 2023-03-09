@@ -16,11 +16,11 @@ export default function PlanetPage(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
   const imgCard = props.img.replace("//", "");
-  console.log("props.image::: edited", props.img);
+  //console.log("props.image::: edited", props.img);
   //const planet = props.planet;
   //console.log("PlanetPage planet:", planet);
   //const pages = ["overview", "structure", "surface"];
-  console.log("PlanetPAge props.planet ->", props.planetInfo.fields.color);
+  //console.log("PlanetPAge props.planet ->", props.planetInfo.fields.color);
 
   const key = Object.keys(props.planetInfo.fields);
   const rotation = key[3];
