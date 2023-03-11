@@ -1,3 +1,74 @@
+::Frontend Mentor - The Planet Explorer App
+
+This app is my approach to the Frontend Mentor challenge consisting in a responsive website that displays infromation and images of the Solor System's planets in three different screen sizes: mobile, tablet, and desktop.
+
+In the mobile version the user can browse through the planet's subpages comprising information about its overview (default page), structure and surface. It is also possible to choose another planet by clicking on the hamburger icon on the right side of the top bar.
+
+The tablet and destop versions contain a menu bar in the top with a link to all planet pages. There is also a menu on the right side of the main section, where the user can access the overview, internal structure and surface geology subpages.
+
+All pages and subpages contain a footer with info boxes summarizing the planet's essential data: rotation and revolution times, radius and average temperature.
+
+::The Challenge and Learning Goals
+
+The present project consists in:
+(a) implementing a Figma design as close as possible to pixel-precision with CSS Modules
+(b) using Next.js to statically generate pages and subpages, specially by using the "getStaticPaths" and "getStaticProps" functions
+(c) creating reusable components (atoms, molecules, and organisms) with an eye to determining their scopes, balancing their complexity, and assembling them to achieve beautiful design and functionality, allowing the app to grow/expand in a concise, smart way
+(d) making use of a Content System Management (Contentful) where the data is fetched from, and can be edited by fellow workers without the need of programming skills
+(e) adding metadata via next/head and Open Graph Protocol, so that the content of the website is easily fathomed by search engines and shareable via social media (generating cards for each page/subpage)
+(f) deploying the application using Vercel and setting up the corresponding webhooks to rebuild it when needed
+
+::What did we achieve
+(a) by applying the concept of static generation, every planet page and subpage is an individual page, assuring optimized content indexation by search engines
+(b) at the same time, the user experiences an integrated application, since the layouts and content may give the impression of being browsing on the same page (for example: in the mobile screen, the "overview, "structure" and "surface" subpages can be accessed by clicking on each of the corresponding links. Only the image and description content change, while the top bar and footer tabs remain the same)
+(c) the choice for statically generating the pages seems to be in good proportion to the amount/nature of the necessary data, resulting in a very fast transition between one page and the other
+(d) a beautiful layout and styling patterns, for example: each planet has a theme colour that relates to its image and occurs in the underscore bar of the selected subpage(mobile version)/planet(tablet/desktop versions) in the correspondent menu, and in the background colour of selected subpage tab (tablet/desktop screens)
+(e) the use of local state is used only for the mobile version to switch between a planet's page and the planets' menu. Even this state could be removed eg. via a hidden checkbox!
+For the purpuses of this website, it means simplicity, so no unnecessary complications
+(f) thanks to fetching the data via the CMS, the application allows collaboration of professionals wihtout coding skills to change and update its content
+(g) each page and subpage generates a card with image and summarized info, making it easy and cool to share via social media
+
+::Build with
+
+- Next.js
+- React, React-dom
+- Contentful
+- CSS modules
+- CSS custom properties, flexbox
+
+::Concepts and techniques applied
+
+- Next.js: getStaticPaths & getStaticProps functions, and next/head tag
+- Contentful: generating models & entries, and using createClient, client.getEntries() in the projects code
+- React: reusable components, useState, callback props
+- CSS modules, custom properties, flexbox
+
+:: How to use this Repo
+
+- create a local folder and inside of it enter the following command: $ git clone git@github.com:luizfiorentino/static-generation-planets-navigator.git
+- install the dependencies with $ npm install
+- open another terminal screen to run the app: $ npm run start - or $ npm run dev for developers mode
+- try out the different screen versions (mobile, tablet, dektop) by expanding/shrinking your browser, and enjoy the responsive design of the app bringing cool infos about the Solar System Planets!
+
+---
+
+- use screen shots to illustrate
+
+::Planet Explorer
+
+- static generation (getStaticProps, getStaticPaths) -> mention some advantages
+- NextJS -> mention advantages of it instead using CRA
+- reusable components (atoms, molecules, organisms) and complexity
+- css modules
+- CMS contentful
+- deployment + webhooks
+- Figma design
+- responsive design (use onHover in the subpages tabs!) + different screen versions (m, t, d)
+- html minimum use of useState
+- styles -> landing strip (to be implemented)
+- meta information card -> social media
+- using callback props (give example)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
