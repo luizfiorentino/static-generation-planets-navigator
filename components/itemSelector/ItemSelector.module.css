@@ -56,6 +56,10 @@
     font-size: 11px;
   }
 
+  .menuTab:hover {
+    background-color: rgba(216, 216, 216, 0.2);
+  }
+
   .mainActive {
     font-size: 11px;
   }
