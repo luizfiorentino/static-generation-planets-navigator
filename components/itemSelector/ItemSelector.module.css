@@ -46,7 +46,7 @@
 
 .menuTabActive {
   background-color: #419ebb;
-  border: 1px solid #419ebb;
+  /* border: 1px solid #419ebb; */
   /* border: none; */
 }
 
