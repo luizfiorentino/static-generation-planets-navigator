@@ -171,6 +171,7 @@
   }
 
   .planetImg {
+    flex-grow: 2;
     margin: 0;
   }
 
