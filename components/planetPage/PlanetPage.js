@@ -41,104 +41,106 @@ export default function PlanetPage(props) {
 
   if (displayMobileMenu === false) {
     return (
-      <div className={styles.main}>
-        <Head>
-          <title>{`${props.planet} - ${props.subpage}`}</title>
-          <meta
-            property="og:title"
-            content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
-          />{" "}
-          <meta property="og:type" content="image&infos" />
-          <meta
-            property="og:image:type"
-            content={`https:${props.img}/svg+xml`}
-          />
-          <meta
-            property="og:site_name"
-            content="https://planet-explorer.vercel.app"
-          />
-          <meta property="og:description" content={props.content} />
-        </Head>
-        <TopBar
-          //pages={pages}
-          displayMobileMenu={displayMobileMenu}
-          setDisplayMobileMenu={setDisplayMobileMenu}
-          planet={props.planet}
-          subpage={props.subpage}
-          color={props.planetInfo.fields.color}
-        />
-
-        <div className={styles.menuTablet}></div>
-
-        <div className={styles.desktop}>
-          <div className={styles.planetImg}>
-            <PlanetImage
-              className={styles.imageInner}
-              image={props.img}
-              bgImage={props.bgImage}
-              subpage={props.subpage}
+      <div className={styles.container}>
+        <div className={styles.main}>
+          <Head>
+            <title>{`${props.planet} - ${props.subpage}`}</title>
+            <meta
+              property="og:title"
+              content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
+            />{" "}
+            <meta property="og:type" content="image&infos" />
+            <meta
+              property="og:image:type"
+              content={`https:${props.img}/svg+xml`}
             />
-          </div>
-          <div className={styles.bannerAndDescription}>
-            <div className={styles.tabletCenter}>
-              <div className={styles.middleSection}>
-                <div className={styles.bannerAndContent}>
-                  <div className={styles.planetBanner}>
-                    <TopBarBanner className="planetBanner">
-                      {props.planetInfo.fields.name}
-                    </TopBarBanner>
-                  </div>
-                  <div className={styles.descriptionAndLink}>
-                    <div className={styles.description}>
-                      {/* <Description text={props.planetInfo.fields.description} /> */}
-                      <Description text={props.content} />
+            <meta
+              property="og:site_name"
+              content="https://planet-explorer.vercel.app"
+            />
+            <meta property="og:description" content={props.content} />
+          </Head>
+          <TopBar
+            //pages={pages}
+            displayMobileMenu={displayMobileMenu}
+            setDisplayMobileMenu={setDisplayMobileMenu}
+            planet={props.planet}
+            subpage={props.subpage}
+            color={props.planetInfo.fields.color}
+          />
+
+          <div className={styles.menuTablet}></div>
+
+          <div className={styles.desktop}>
+            <div className={styles.planetImg}>
+              <PlanetImage
+                className={styles.imageInner}
+                image={props.img}
+                bgImage={props.bgImage}
+                subpage={props.subpage}
+              />
+            </div>
+            <div className={styles.bannerAndDescription}>
+              <div className={styles.tabletCenter}>
+                <div className={styles.middleSection}>
+                  <div className={styles.bannerAndContent}>
+                    <div className={styles.planetBanner}>
+                      <TopBarBanner className="planetBanner">
+                        {props.planetInfo.fields.name}
+                      </TopBarBanner>
                     </div>
-                    <div className={styles.link}>
-                      <SourceLink />
+                    <div className={styles.descriptionAndLink}>
+                      <div className={styles.description}>
+                        {/* <Description text={props.planetInfo.fields.description} /> */}
+                        <Description text={props.content} />
+                      </div>
+                      <div className={styles.link}>
+                        <SourceLink />
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div className={styles.pageTabs}>
+                  <PageMenuTab
+                    subpage={props.subpage}
+                    // type="tabletDesktopMenu"
+                    planet={props.planet}
+                    color={props.planetInfo.fields.color}
+                  />
+                </div>
               </div>
-              <div className={styles.pageTabs}>
-                <PageMenuTab
-                  subpage={props.subpage}
-                  // type="tabletDesktopMenu"
-                  planet={props.planet}
-                  color={props.planetInfo.fields.color}
+              <div className={styles.infoTabs}>
+                <InfoTab
+                  call={`${rotation} time`}
+                  value={props.planetInfo.fields.rotation}
+                />
+                <InfoTab
+                  call={`${revolution} time`}
+                  value={props.planetInfo.fields.revolution}
+                />
+                <InfoTab call={radius} value={props.planetInfo.fields.radius} />
+                <InfoTab
+                  call={"average temp."}
+                  value={props.planetInfo.fields.temperature}
                 />
               </div>
             </div>
-            <div className={styles.infoTabs}>
-              <InfoTab
-                call={`${rotation} time`}
-                value={props.planetInfo.fields.rotation}
-              />
-              <InfoTab
-                call={`${revolution} time`}
-                value={props.planetInfo.fields.revolution}
-              />
-              <InfoTab call={radius} value={props.planetInfo.fields.radius} />
-              <InfoTab
-                call={"average temp."}
-                value={props.planetInfo.fields.temperature}
-              />
-            </div>
           </div>
-        </div>
-        <div className={styles.infoTabsDesktop}>
-          <InfoTab
-            call={`${rotation} time`}
-            value={props.planetInfo.fields.rotation}
-          />
-          <InfoTab
-            call={`${revolution} time`}
-            value={props.planetInfo.fields.revolution}
-          />
-          <InfoTab call={radius} value={props.planetInfo.fields.radius} />
-          <InfoTab
-            call={"average temp."}
-            value={props.planetInfo.fields.temperature}
-          />
+          <div className={styles.infoTabsDesktop}>
+            <InfoTab
+              call={`${rotation} time`}
+              value={props.planetInfo.fields.rotation}
+            />
+            <InfoTab
+              call={`${revolution} time`}
+              value={props.planetInfo.fields.revolution}
+            />
+            <InfoTab call={radius} value={props.planetInfo.fields.radius} />
+            <InfoTab
+              call={"average temp."}
+              value={props.planetInfo.fields.temperature}
+            />
+          </div>
         </div>
       </div>
     );
