@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@100;400&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
 
 .main {
-  font-family: "Antonio", sans-serif;
   font-weight: 400;
   font-size: 28px;
   line-height: 36px;
@@ -11,7 +10,6 @@
 }
 
 .planetBanner {
-  font-family: "Antonio", sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 52px;
@@ -40,7 +38,6 @@
   }
 
   .planetBanner {
-    font-family: "Antonio", sans-serif;
     font-weight: 400;
     font-size: 80px;
     line-height: 104px;
