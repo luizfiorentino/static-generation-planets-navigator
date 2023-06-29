@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./PlanetPage.module.css";
 import { useState } from "react";
 import Head from "next/head";
-
 import PlanetImage from "@/components/planetImage/PlanetImage";
 import TopBarBanner from "@/components/topBarBanner/TopBarBanner";
 import Description from "@/components/description/Description";
@@ -14,7 +13,7 @@ import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-
+  console.log("props:::", props.planetInfo.fields.surfaceImage.fields.file.url);
   const imgCard = props.img.replace("//", "");
   //console.log("props.image::: edited", props.img);
   //const planet = props.planet;
@@ -48,11 +47,15 @@ export default function PlanetPage(props) {
             <meta
               property="og:title"
               content={`Planet Explorer: ${props.planet} - ${props.subpage}`}
-            />{" "}
+            />
+            <meta
+              property="og:image"
+              content={`https:${props.planetInfo.fields.surfaceImage.fields.file.url}`}
+            />
             <meta property="og:type" content="image&infos" />
             <meta
               property="og:image:type"
-              content={`https:${props.img}/svg+xml`}
+              content={`https:${props.image}/svg+xml`}
             />
             <meta
               property="og:site_name"
@@ -95,7 +98,7 @@ export default function PlanetPage(props) {
                         <Description text={props.content} />
                       </div>
                       <div className={styles.link}>
-                        <SourceLink />
+                        <SourceLink link={props.planetInfo.fields.wikiLink} />
                       </div>
                     </div>
                   </div>

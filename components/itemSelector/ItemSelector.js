@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "./ItemSelector.module.css";
 import Link from "next/link";
+import { League_Spartan } from "@next/font/google";
+
+export const league_spartan = League_Spartan({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function ItemSelector(props) {
-  //console.log("item selector props=", props);
-  //console.log("item Selector props.color->", props.color);
-
   const reference = props.link ? props.link : "/";
-
   let activeColor;
 
   return props.type === "subpageTB" || props.type === "planetLinks" ? (
@@ -18,13 +20,13 @@ export default function ItemSelector(props) {
         props.children !== "structure" &&
         props.children !== "overview" &&
         props.children !== "surface"
-          ? // ? `/planet/${props.children.toLowerCase()}`
-            props.link
-          : // : `${props.planet}/${props.children}`
-            props.link
+          ? props.link
+          : props.link
       }
       className={
-        props.highlighted ? ` ${styles.mainActive} }` : ` ${styles.main} }`
+        props.highlighted
+          ? ` ${styles.mainActive} ${league_spartan.className}`
+          : ` ${styles.main} ${league_spartan.className} `
       }
     >
       {props.children}
@@ -38,17 +40,11 @@ export default function ItemSelector(props) {
         props.children !== "surface"
           ? props.link
           : props.link
-        // `planets/${props.children}`
       }
-      // className={
-      //   props.highlighted
-      //     ? ` ${props.className} ${styles.mainActive} ${styles[props.variant]}`
-      //     : `${props.className} ${styles.main} ${styles[props.variant]}`
-      // }
       className={
         !props.highlighted
-          ? ` ${styles.menuTab} }`
-          : ` ${styles.menuTab} ${styles.menuTabActive} }`
+          ? ` ${styles.menuTab} ${league_spartan.className}`
+          : ` ${styles.menuTab} ${styles.menuTabActive} ${league_spartan.className}`
       }
     >
       {props.children}
