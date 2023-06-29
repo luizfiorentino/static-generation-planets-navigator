@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./PlanetPage.module.css";
 import { useState } from "react";
 import Head from "next/head";
-
 import PlanetImage from "@/components/planetImage/PlanetImage";
 import TopBarBanner from "@/components/topBarBanner/TopBarBanner";
 import Description from "@/components/description/Description";
@@ -14,7 +13,7 @@ import MobileMenu from "@/components/mobileMenu/MobileMenu";
 
 export default function PlanetPage(props) {
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-
+  console.log("info:::", props.planetInfo.fields.wikiLink);
   const imgCard = props.img.replace("//", "");
   //console.log("props.image::: edited", props.img);
   //const planet = props.planet;
@@ -95,7 +94,7 @@ export default function PlanetPage(props) {
                         <Description text={props.content} />
                       </div>
                       <div className={styles.link}>
-                        <SourceLink />
+                        <SourceLink link={props.planetInfo.fields.wikiLink} />
                       </div>
                     </div>
                   </div>
